@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <style>
+      .site-nav{background:#24292e;color:#fff}
+      .site-nav .container{max-width:1000px;margin:0 auto;padding:.6rem 1rem}
+      .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+      .site-nav a{color:#fff;text-decoration:none;font-weight:600}
+      .page-content{max-width:900px;margin:2rem auto;padding:0 1rem;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+      .hero{display:flex;align-items:center;gap:1rem}
+      .hero img{width:120px;border-radius:50%}
+    </style>
+  </head>
+  <body>
+    {% include site-nav.html %}
+    <main class="page-content">
+      {{ content }}
+    </main>
+  </body>
+</html>
