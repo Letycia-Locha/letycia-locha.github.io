@@ -5,15 +5,15 @@ layout: single
 author_profile: true
 ---
 
-# 👋 Olá, eu sou o Jorge Simocovski
+# Jorge Luis Simocovski — Technical Product Manager
 
-Bem-vindo ao meu portfólio.
+**Spec-Driven • Customer & Data Focused • Technical Leadership**
 
-Aqui você encontrará meus principais projetos, incluindo:
+Sou um Technical Product Manager que gera impacto sustentável em produtos técnicos complexos. Combino conhecimento de engenharia, arquitetura e dados para transformar problemas reais do cliente em decisões estratégicas, priorizadas por valor e medidas por métricas claras.
 
-- 💡 **Case de Product Discovery — Loft**  
-- 🧪 **Estratégia de Qualidade e Cultura de Testes**  
-- 🧭 **Testes Integrados a nível de Feature**  
-- 🚀 **Projetos de Engenharia e Produto**
+Principais focos:
+- Definir problemas relevantes e objetivos mensuráveis
+- Priorizar com trade-offs explícitos entre risco, custo e impacto
+- Conduzir discovery com experimentos que geram aprendizado acionável
 
-Use o menu para navegar pelos meus cases.
+Explore cases e decisões relevantes no menu — cada case segue estrutura: Contexto → Objetivo → Decisão → Trade-offs → Impacto.
