@@ -86,8 +86,8 @@ Os projetos apresentados neste portfólio mostram como essas decisões se materi
 
 - LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
 - Email: (adicione seu e‑mail aqui se desejar)
-
-Se concordar, próximo passo: refatorar os cases para seguir estrutura obrigatória (Contexto → Objetivo → Decisão → Trade‑offs → Impacto) e ajustar a página principal para destacar métricas e decisões-chave.
+- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
+- Email: (adicione seu e‑mail aqui se desejar)
 
 
 
