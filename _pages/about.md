@@ -74,7 +74,7 @@ Essa abordagem reduz ambiguidade, aumenta alinhamento com engenharia e fortalece
 
 ---
 
-Os projetos apresentados neste portfólio mostram como essas decisões se materializam na prática, sempre com foco em impacto mensurável e aprendizado real.
+
 
 
 
