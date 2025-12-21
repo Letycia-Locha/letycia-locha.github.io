@@ -7,7 +7,25 @@ author_profile: true
 
 # Projects
 
-<p>Explore select cases that highlight decisions, trade-offs and measurable impact. Use filters to focus on Platform, B2B or Internal work.</p>
+<p>Explore select cases that highlight decisions, trade-offs and measurable impact.</p>
+
+{% comment %} build tag list dynamically {% endcomment %}
+{% assign all_tags = '' %}
+{% for p in projects %}
+  {% for t in p.tags %}
+    {% unless all_tags contains t %}
+      {% capture all_tags %}{{ all_tags }} {{ t }}{% endcapture %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign tag_list = all_tags | strip | split: ' ' %}
+
+<div class="filters">
+  <button class="filter-btn active" data-tag="all">Todos</button>
+  {% for t in tag_list %}
+    <button class="filter-btn" data-tag="{{ t }}">{{ t | capitalize }}</button>
+  {% endfor %}
+</div>
 
 {% assign per_page = 6 %}
 {% assign projects = site.data.projects | sort: 'order' %}
@@ -30,7 +48,7 @@ author_profile: true
 
 <div class="projects-grid">
   {% for p in paged %}
-  <article class="project-card">
+  <article class="project-card" data-tags="{{ p.tags | join: ' ' }}">
     <h3><a href="{{ site.baseurl }}{{ p.permalink }}">{{ p.title }}</a></h3>
     <p class="blurb">{{ p.short_blurb }}</p>
     <div class="meta">
@@ -41,6 +59,22 @@ author_profile: true
   </article>
   {% endfor %}
 </div>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.project-card');
+    function setActive(btn){ buttons.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+    function filter(tag){
+      cards.forEach(function(c){
+        var tags = c.getAttribute('data-tags') || '';
+        if (tag === 'all' || tags.split(' ').indexOf(tag) !== -1){ c.style.display = ''; }
+        else { c.style.display = 'none'; }
+      });
+    }
+    buttons.forEach(function(b){ b.addEventListener('click', function(){ setActive(this); filter(this.getAttribute('data-tag')); }); });
+  })();
+</script>
 
 {% if total_pages > 1 %}
   <nav class="paginator" role="navigation" aria-label="Projects pagination">
