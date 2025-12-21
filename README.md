@@ -12,3 +12,17 @@ Como adicionar/atualizar um case:
 4. Para controlar a ordem de navegação (prev/next), ajuste o campo `order` no `_data/projects.yml`.
 5. Mantenha commits pequenos e descritivos. Cada alteração visual ou de conteúdo deve ter um commit separado para fácil rollback.
 
+## Design, testes e execução local
+
+- **Paleta recomendada:** profissional e sóbria — primary `#0b3d91` (navy), accent `#0ea5a4` (teal), neutro `#6b7280` (muted). Essas variáveis estão definidas em `_layouts/single.html` e servem para manter consistência visual.
+- **Tom de voz:** claro, técnico na medida certa, confiante e humano — priorize frases que expliquem decisões e impacto (não listas de tarefas).
+- **Testar localmente:** para pré-visualizar as mudanças, instale Ruby + Bundler e rode (PowerShell):
+
+```powershell
+gem install bundler jekyll
+bundle install
+bundle exec jekyll serve --livereload
+```
+
+- Se não quiser instalar localmente, cada commit será publicado no GitHub Pages após o push (pode demorar alguns minutos para propagar).  
+
