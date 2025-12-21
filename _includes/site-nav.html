@@ -1,9 +1,27 @@
 <nav class="site-nav">
   <div class="container">
-    <ul>
+    <div class="brand"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav-list">☰</button>
+    <ul id="site-nav-list">
       {% for item in site.data.navigation %}
-      <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+      <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </div>
 </nav>
+<script>
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var list = document.getElementById('site-nav-list');
+    if (!btn || !list) return;
+    btn.addEventListener('click', function(){
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      list.style.display = expanded ? 'none' : 'flex';
+    });
+    // ensure mobile initial state
+    if (window.matchMedia && window.matchMedia('(max-width: 600px)').matches) {
+      list.style.display = 'none';
+    }
+  })();
+</script>

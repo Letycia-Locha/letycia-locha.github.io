@@ -55,6 +55,11 @@
         .case-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
         .case-meta{position:sticky;top:1.5rem}
       }
+      @media (max-width: 600px){
+        .site-nav ul{display:none;flex-direction:column;gap:.5rem}
+        .site-nav .menu-toggle{display:inline-block;color:#fff;background:transparent;border:0;font-size:1.2rem}
+        .site-nav .brand a{color:#fff;text-decoration:none;font-weight:700}
+      }
     </style>
   </head>
   <body>
