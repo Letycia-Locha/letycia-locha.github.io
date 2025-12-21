@@ -7,13 +7,17 @@ author_profile: true
 
 # Jorge Luis Simocovski — Technical Product Manager
 
-**Spec-Driven • Customer & Data Focused • Technical Leadership**
+Atuo como Technical Product Manager em produtos técnicos complexos, onde boas decisões dependem mais de contexto do que de opinião.
 
-Sou um Technical Product Manager que gera impacto sustentável em produtos técnicos complexos. Combino conhecimento de engenharia, arquitetura e dados para transformar problemas reais do cliente em decisões estratégicas, priorizadas por valor e medidas por métricas claras.
+Meu trabalho é conectar cliente, dados e tecnologia para transformar problemas reais em decisões claras, priorizadas por valor e sustentadas por métricas ao longo do tempo.
 
-Principais focos:
-- Definir problemas relevantes e objetivos mensuráveis
-- Priorizar com trade-offs explícitos entre risco, custo e impacto
-- Conduzir discovery com experimentos que geram aprendizado acionável
+Não foco na entrega de funcionalidades isoladas, mas em definir problemas relevantes, explicitar trade-offs e assumir responsabilidade pelo impacto das escolhas feitas.
 
-Explore cases e decisões relevantes no menu — cada case segue estrutura: Contexto → Objetivo → Decisão → Trade-offs → Impacto.
+## Principais focos da minha atuação:
+
+- Definição de problemas e objetivos claros, sempre ancorados em necessidades reais do cliente
+- Priorização com trade-offs explícitos, equilibrando risco, custo, tempo e impacto esperado
+- Discovery orientado a aprendizado, utilizando experimentos para reduzir incertezas antes de escalar decisões
+
+Os cases apresentados mostram como essas decisões se materializam na prática.  
+Cada um segue uma estrutura clara: contexto, objetivo, decisão, trade-offs e impacto.
