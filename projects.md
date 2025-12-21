@@ -49,7 +49,21 @@ author_profile: true
       <a class="prev" href="{{ site.baseurl }}/projects/{{ prev }}/" aria-label="Previous page">← Anterior</a>
     {% endif %}
 
-    <span class="page-info">Página {{ current_page }} de {{ total_pages }}</span>
+    <div class="page-numbers">
+      {% if current_page > 2 %}
+        <a href="{{ site.baseurl }}/projects/1/" aria-label="First page">« Primeiro</a>
+      {% endif %}
+      {% for i in (1..total_pages) %}
+        {% if i == current_page %}
+          <a class="current" href="{{ site.baseurl }}/projects/{{ i }}/" aria-label="Current page">{{ i }}</a>
+        {% else %}
+          <a href="{{ site.baseurl }}/projects/{{ i }}/" aria-label="Page {{ i }}">{{ i }}</a>
+        {% endif %}
+      {% endfor %}
+      {% if current_page < total_pages | minus:1 %}
+        <a href="{{ site.baseurl }}/projects/{{ total_pages }}/" aria-label="Last page">Última »</a>
+      {% endif %}
+    </div>
 
     {% if current_page < total_pages %}
       {% assign next = current_page | plus: 1 %}
