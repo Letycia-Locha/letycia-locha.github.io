@@ -1,16 +1,19 @@
 # Navegação do site
-- title: "Home"
-  url: "/"
+ - title: "Home"
+   url: "/"
 
-- title: "Sobre"
-  url: "/about/"
+ - title: "Sobre"
+   url: "/#sobre"
 
-- title: "Experiência"
-  url: "/experience/"
+ - title: "Experiência"
+   url: "/#experiencia"
 
-- title: "Cases"
-  url: "/cases/"
+ - title: "Projetos"
+   url: "/#projetos"
 
-- title: "Skills"
-  url: "/skills/"
+ - title: "Skills"
+   url: "/#skills"
+
+ - title: "Contato"
+   url: "/#contato"
 
