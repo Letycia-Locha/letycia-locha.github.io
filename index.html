@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jorge Simocovski - Technical Product Manager | QA Leadership | Qualidade como Produto">
+    <meta name="theme-color" content="#003366">
+    <title>Jorge Simocovski - Technical Product Manager</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #F4F7FA;
+            color: #1A1A1A;
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           DESIGN SYSTEM
+           ============================================ */
+        :root {
+            --color-primary: #003366;
+            --color-accent: #FF5F1F;
+            --color-accent-hover: #E5500D;
+            --color-bg-light: #F4F7FA;
+            --color-bg-card: #FFFFFF;
+            --color-text-dark: #1A1A1A;
+            --color-text-medium: #555555;
+            --color-text-light: #888888;
+            --color-border: #E0E0E0;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ============================================
+           CONTAINER & LAYOUT
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ============================================
+           HEADER / HERO SECTION
+           ============================================ */
+        header {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFB 100%);
+            padding: 4rem 0;
+            border-bottom: 2px solid var(--color-accent);
+            text-align: center;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--color-accent);
+            box-shadow: 0 4px 20px rgba(255, 95, 31, 0.2);
+            overflow: hidden;
+            background: var(--color-bg-card);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .hero-slogan {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--color-text-medium);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-bio {
+            font-size: 1rem;
+            color: var(--color-text-medium);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            box-shadow: 0 6px 16px rgba(255, 95, 31, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 6px 16px rgba(0, 51, 102, 0.3);
+        }
+
+        /* ============================================
+           VANTAGENS (GRID 4 COLUNAS)
+           ============================================ */
+        .advantages-section {
+            padding: 3rem 0;
+        }
+
+        .advantages-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .advantage-card {
+            background: var(--color-bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-accent);
+        }
+
+        .advantage-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .advantage-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .advantage-text {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           TRACK RECORD (IMPACT CARDS)
+           ============================================ */
+        .track-record-section {
+            padding: 3rem 0;
+            background: var(--color-bg-card);
+            border-top: 2px solid var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .track-record-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
+            border: 2px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+        }
+
+        .impact-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1;
+            margin: 1rem 0;
+            letter-spacing: -1px;
+        }
+
+        .impact-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .impact-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 1rem 0;
+        }
+
+        .impact-description {
+            font-size: 0.95rem;
+            color: var(--color-text-medium);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           EXPERIENCE & SKILLS (TWO COLUMNS)
+           ============================================ */
+        .experience-skills-section {
+            padding: 3rem 0;
+        }
+
+        .experience-skills-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .exp-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .experience-card,
+        .skills-card {
+            background: var(--color-bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--color-border);
+        }
+
+        .experience-card h3,
+        .skills-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 0.75rem;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-role {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .experience-description {
+            font-size: 0.9rem;
+            color: var(--color-text-medium);
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge.highlight {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--color-primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            header {
+                padding: 2.5rem 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.1rem;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+
+            .exp-skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .impact-number {
+                font-size: 2rem;
+            }
+
+            .impact-card {
+                padding: 1.5rem 1rem;
+                min-height: auto;
+            }
+
+            .advantages-grid {
+                gap: 1rem;
+            }
+
+            .advantage-card {
+                padding: 1rem;
+            }
+
+            .experience-card,
+            .skills-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ============================================
+           ANIMATIONS & EFFECTS
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header,
+        .advantages-section,
+        .track-record-section,
+        .experience-skills-section,
+        footer {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        section {
+            animation-delay: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER / HERO SECTION
+         ============================================ -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <div class="hero-image">
+                    <img src="https://avatars.githubusercontent.com/u/jorgesmk?v=4" alt="Jorge Luis Simocovski" loading="lazy">
+                </div>
+                <div class="hero-text">
+                    <h1>Jorge Luis Simocovski</h1>
+                    <h2>Technical Product Manager | QA Leadership</h2>
+                    <p class="hero-slogan">"Ser o cargo antes de ter o cargo."</p>
+                    <p class="hero-bio">Transformo qualidade e dados em produtos escaláveis. Atuo na interseção entre Engenharia e Negócio para reduzir incertezas e acelerar entregas.</p>
+                    <div class="hero-ctas">
+                        <a href="#track-record" class="btn btn-primary">Ver Track Record</a>
+                        <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         VANTAGENS COMPETITIVAS
+         ============================================ -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2>Meu Diferencial</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="advantage-title">Redução de Incerteza</h3>
+                    <p class="advantage-text">Antecipação de riscos técnicos através de métricas e dados estruturados.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="advantage-title">Fluência em Dados</h3>
+                    <p class="advantage-text">Autonomia em SQL & QuickSight para decisões baseadas em evidências.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bridge"></i>
+                    </div>
+                    <h3 class="advantage-title">Ponte Técnica</h3>
+                    <p class="advantage-text">Tradução de requisitos em viabilidade entre Produto e Engenharia.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="advantage-title">Visão End-to-End</h3>
+                    <p class="advantage-text">Foco na jornada completa do usuário e impacto mensurável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TRACK RECORD (IMPACTO)
+         ============================================ -->
+    <section class="track-record-section" id="track-record">
+        <div class="container">
+            <h2>Track Record de Impacto</h2>
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <div>
+                        <p class="impact-label">Dados & Autonomia</p>
+                        <p class="impact-number">1.5k</p>
+                        <p class="impact-label">acessos em 10 meses</p>
+                    </div>
+                    <div>
+                        <h3 class="impact-title">Data-as-a-Product</h3>
+                        <p class="impact-description">Democratização de dados com QuickSight, gerando 100% de autonomia para as squads em decisões baseadas em métricas.</p>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div>
+                        <p class="impact-label">Qualidade Preventiva</p>
+                        <p class="impact-number">-65%</p>
+                        <p class="impact-label">redução de bugs</p>
+                    </div>
+                    <div>
+                        <h3 class="impact-title">AI-Driven Quality</h3>
+                        <p class="impact-description">Agentes de IA no CI/CD para code review inteligente. Iniciativa convertida em KR oficial da engenharia.</p>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div>
+                        <p class="impact-label">Cultura & Escala</p>
+                        <p class="impact-number">85%</p>
+                        <p class="impact-label">cobertura de testes</p>
+                    </div>
+                    <div>
+                        <h3 class="impact-title">Engenharia Autônoma</h3>
+                        <p class="impact-description">De dependência de QA centralizada para autonomia total das squads. Shift-left testing + empoderamento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         EXPERIÊNCIA & SKILLS
+         ============================================ -->
+    <section class="experience-skills-section">
+        <div class="container">
+            <h2>Experiência & Competências</h2>
+            <div class="exp-skills-grid">
+                <!-- EXPERIÊNCIA -->
+                <div class="experience-card">
+                    <h3><i class="fas fa-briefcase"></i> Experiência</h3>
+                    
+                    <div class="experience-item">
+                        <p class="experience-role">Senior Software Engineer (Platform PM)</p>
+                        <p class="experience-company">Itaú Unibanco — Jun 2023 – Presente</p>
+                        <p class="experience-description">Liderança em Data Mesh, implementação de GenAI para Code Review e gestão de qualidade baseada em dados. Elevei cobertura de testes de 30% para 85%.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <p class="experience-role">Product Owner</p>
+                        <p class="experience-company">Walmart Brasil — Jul 2016 – Fev 2019</p>
+                        <p class="experience-description">Gestão de backlog e priorização de roadmap em e-commerce de alta escala com 3+ squads.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <p class="experience-role">QA Lead → Technical Quality Manager</p>
+                        <p class="experience-company">Múltiplas Organizações — 2015 – 2023</p>
+                        <p class="experience-description">Progressão de QA Specialist a liderança de qualidade; shift-left testing e automação estratégica.</p>
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="skills-card">
+                    <h3><i class="fas fa-code"></i> Stack Técnica</h3>
+                    
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-star"></i> Destaques (Expertise)
+                    </h4>
+                    <div class="skills-list">
+                        <span class="skill-badge highlight">Amazon Athena</span>
+                        <span class="skill-badge highlight">QuickSight</span>
+                        <span class="skill-badge highlight">AWS Cloud</span>
+                        <span class="skill-badge highlight">Data Mesh</span>
+                    </div>
+
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-tools"></i> Ferramentas & Metodologia
+                    </h4>
+                    <div class="skills-list">
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Jira</span>
+                        <span class="skill-badge">CI/CD</span>
+                        <span class="skill-badge">Product Discovery</span>
+                        <span class="skill-badge">OKRs</span>
+                        <span class="skill-badge">Shift-Left Testing</span>
+                        <span class="skill-badge">Code Review</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-certificate"></i> Certificações
+                    </h4>
+                    <div class="skills-list">
+                        <span class="skill-badge">AWS Cloud Practitioner</span>
+                        <span class="skill-badge">Product Management (280 Group)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Pronto para liderar a evolução do seu produto?</h2>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:jorgesmk@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/jorgesmk" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Jorge Simocovski. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Analytics tracking (optional)
+        console.log('Portfolio carregado com sucesso!');
+    </script>
+</body>
+</html>
