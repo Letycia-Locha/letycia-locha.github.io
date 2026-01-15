@@ -1,20 +1,29 @@
 # Projects metadata (ordered). Use this file to control listing, order and filters.
-# Fields: id, title, permalink, tags (platform|b2b|internal), short_blurb, key_metric, status, order
+# Fields: id, title, permalink, tags (quality|data|culture), short_blurb, key_metric, status, order
 
-- id: example-case-1
-  title: "Example: Platform Observability"
-  permalink: "/projects/example-platform-observability/"
-  tags: [platform, data]
-  short_blurb: "Spec-driven initiative to expose observability metrics as product features."
-  key_metric: "+25% signal coverage"
-  status: "experiment"
+- id: quality-culture
+  title: "Cultura de Qualidade e Testes"
+  permalink: "/cases/quality-culture/"
+  tags: [quality, culture]
+  short_blurb: "De dependência de QA a autonomia das squads via shift-left testing e empoderamento."
+  key_metric: "-65% bugs críticos"
+  status: "launched"
   order: 1
 
-- id: example-case-2
-  title: "Example: Internal Developer Enablement"
-  permalink: "/projects/example-dev-enablement/"
-  tags: [internal, engineering]
-  short_blurb: "Enablement tooling to reduce mean time to merge and increase dev throughput."
-  key_metric: "-18% MTTR"
+- id: quality-data-product
+  title: "Qualidade como Produto de Dados"
+  permalink: "/cases/quality-data-product/"
+  tags: [quality, data]
+  short_blurb: "De centralização técnica a escalabilidade distribuída com dashboards em tempo real."
+  key_metric: "1.5k acessos/10 meses"
   status: "launched"
   order: 2
+
+- id: intelligent-quality
+  title: "Qualidade Inteligente: IA + Testes"
+  permalink: "/cases/intelligent-quality/"
+  tags: [quality, data]
+  short_blurb: "Prevenção contínua via IA no code review e testes integrados por feature."
+  key_metric: "-65% bugs em produção"
+  status: "launched"
+  order: 3
