@@ -1,53 +1,97 @@
 # Portfólio — Jorge Simocovski
 
-Este é um portfólio em Jekyll hospedado no GitHub Pages, refatorado para eliminar paginação desnecessária e manter a estrutura limpa e eficiente.
+Portfólio em Jekyll (GitHub Pages) com design limpo, responsivo e orientado a resultado. Consolidado em uma página onepage com navegação por âncoras.
 
-## Estrutura do Projeto
+## ✨ Características
+
+- **Onepage responsivo** — Todas as seções em uma única página (Início, Sobre, Experiência, Projetos, Skills, Contato)
+- **Scroll spy** — Navegação destaca a seção atual conforme você scrolla
+- **Design system** — Navy (#003366) + Laranja Neon (#FF5F1F)
+- **Cases detalhados** — Tres case studies com deep links de impacto
+- **Mobile-first** — Layout adaptável com CSS grid e flexbox
+- **Smooth scroll** — Navegação suave com âncoras (HTML5 + CSS)
+
+## 🗂️ Estrutura do Projeto
 
 ```
 _pages/
-  index.md              # Home
-  about.md              # Sobre
-  experience.md         # Experiência (timeline)
-  skills.md             # Skills (badges)
-  cases.md              # Index de cases
-  *.md                  # Case detail pages
+  index.md                    # Página principal (onepage com todas as seções)
+  quality-culture.md          # Case: Cultura de Qualidade
+  quality-data-product.md     # Case: Qualidade como Produto de Dados
+  intelligent-quality.md      # Case: Qualidade Inteligente (IA + Testes)
 
 _data/
-  navigation.yml        # Navegação do site
+  navigation.yml              # Navegação (âncoras para seções onepage)
 
 _includes/
-  site-nav.html         # Navegação (incluso em todas as páginas)
+  site-nav.html               # Header + menu com scroll spy
 
 assets/css/
-  custom.css            # Design system (Navy #003366 + Laranja #FF5F1F)
+  custom.css                  # Design system (vars, grid, cards, responsivo)
 
 _layouts/
-  single.html           # Layout padrão (limpo, sem paginação)
+  single.html                 # Layout limpo
+
+archive/
+  (pasta arquivos antigos — removida)
 ```
 
-## Como Adicionar um Novo Case
+## 🎯 Navegação e Âncoras
 
-1. Crie um novo arquivo markdown em `_pages/` (ex: `_pages/seu-case.md`)
-2. Use o front matter com permalink `/cases/seu-case/`:
+A navegação aponta para as seguintes âncoras:
+- `#inicio` — Hero + CTA
+- `#sobre` — Trajetória e diferencial
+- `#experiencia` — Timeline profissional
+- `#projetos` — Impact cards de cases
+- `#skills` — Competências por categoria
+- `#contato` — Footer com LinkedIn e email
+
+## 📱 Como Adicionar um Novo Case
+
+1. Crie arquivo em `_pages/seu-case.md`
+2. Use permalink como `/cases/seu-case/`:
    ```yaml
    ---
-   title: "Título do Case"
+   title: "Seu Case"
    permalink: /cases/seu-case/
    layout: single
    author_profile: false
    ---
    ```
-3. Estruture o conteúdo: Context → Problem → Decision → Approach → Metrics → Impact → Result
-4. Adicione um link no `cases.md` para referência cruzada
-5. Commit e push!
+3. Estruture com: **Contexto → Problema → Decisão → Abordagem → Métricas → Impacto → Resultado**
+4. Adicione link no section `#projetos` do `index.md` com impact card
+5. Commit e push — site atualiza automaticamente no GitHub Pages
 
-## Paleta de Cores
+## 🚀 Executar Localmente
 
-- **Primária (Navy):** `#003366` — backgrounds, títulos, elementos principais
-- **Destaque (Laranja):** `#FF5F1F` — botões, números de impacto, links de ação
-- **Background:** `#FFFFFF` ou `#F8F9FA` (cinza claro)
-- **Texto:** `#1A1A1A` (escuro) ou `#555555` (médio)
+```bash
+# Instalar dependências
+gem install bundler jekyll
+bundle install
+
+# Servir em http://localhost:4000/Jorge-Simocovski/
+bundle exec jekyll serve --livereload --baseurl "/Jorge-Simocovski"
+```
+
+## 🎨 Paleta de Cores
+
+| Elemento | Cor | Hex |
+|----------|-----|-----|
+| Primária (Navy) | | `#003366` |
+| Destaque (Laranja) | | `#FF5F1F` |
+| Background claro | | `#F8F9FA` |
+| Texto escuro | | `#1A1A1A` |
+| Texto médio | | `#555555` |
+
+## 📝 Versão Atual
+
+- **Data:** 15 de janeiro de 2026
+- **Status:** ✅ Onepage consolidada, cases vinculados, navegação com scroll spy
+- **Últimos ajustes:** Remoção de arquivos duplicados, melhoria de hero, melhor responsividade
+
+## 📌 Nota
+
+Página antiga e arquivos redundantes foram removidos. Estrutura mantém-se limpa e performática.
 
 Todas as cores estão definidas em `assets/css/custom.css` como variáveis CSS (`:root`).
 

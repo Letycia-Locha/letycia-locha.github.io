@@ -68,3 +68,27 @@ window.addEventListener('resize', function() {
     }
   }
 });
+
+// Scroll spy: highlight nav link based on current section
+function updateActiveLink() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = list.querySelectorAll('a[href*="#"]');
+  
+  var currentSection = null;
+  sections.forEach(function(section) {
+    var rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      currentSection = section.id;
+    }
+  });
+  
+  navLinks.forEach(function(link) {
+    link.classList.remove('active');
+    if (currentSection && link.href.includes('#' + currentSection)) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+updateActiveLink(); // Initial call

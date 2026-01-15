@@ -6,17 +6,19 @@ author_profile: false
 ---
  
 <section id="inicio" class="hero">
-  <div class="hero-inner">
-    <div class="hero-image">
-      <img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski">
-    </div>
-    <div class="hero-text">
-      <h1>Jorge Luis Simocovski</h1>
-      <p class="subtitle">Technical Product Manager • Product Analyst • Quality</p>
-      <p class="tagline">De reativo a preventivo — qualidade como produto.</p>
-      <div class="hero-ctas">
-        <a href="{{ site.baseurl }}#projetos" class="btn btn-accent">Ver Projetos</a>
-        <a href="{{ site.baseurl }}#contato" class="btn btn-primary">Contato</a>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-image">
+        <img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski">
+      </div>
+      <div class="hero-text">
+        <h1>Jorge Luis Simocovski</h1>
+        <p class="subtitle">Technical Product Manager • Product Analyst • Quality</p>
+        <p class="tagline">De reativo a preventivo — qualidade como produto.</p>
+        <div class="hero-ctas" style="margin-top: 1.5rem;">
+          <a href="{{ site.baseurl }}#projetos" class="btn btn-accent" style="margin-right: 1rem;">Ver Projetos</a>
+          <a href="{{ site.baseurl }}#contato" class="btn btn-primary">Contato</a>
+        </div>
       </div>
     </div>
   </div>
