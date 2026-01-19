@@ -319,6 +319,10 @@
             overflow: hidden;
             border-radius: 4px;
             z-index: 2;
+            background: linear-gradient(135deg, rgba(255, 95, 31, 0.1), rgba(17, 34, 64, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .photo-container img {
@@ -328,6 +332,7 @@
             border-radius: 4px;
             filter: grayscale(0%) brightness(1);
             transition: all 0.3s ease;
+            display: block;
         }
 
         .photo-container::after {
@@ -788,7 +793,7 @@
                 <div class="about-photo">
                     <div class="photo-border"></div>
                     <div class="photo-container">
-                        <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" class="photo-responsive">
+                        <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
                     </div>
                 </div>
             </div>
