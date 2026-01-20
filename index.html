@@ -73,7 +73,7 @@
             right: 0;
             padding: 1.5rem 2rem;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             gap: 3rem;
             z-index: 1000;
@@ -85,6 +85,21 @@
             background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 95, 31, 0.1);
+        }
+
+        .nav-logo {
+            color: var(--accent-neon);
+            font-weight: 800;
+            font-size: 1.5rem;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.2em;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            text-shadow: 0 0 20px rgba(255, 95, 31, 0.5);
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -803,6 +818,7 @@
          NAVBAR
          ============================================ -->
     <nav id="navbar">
+        <div class="nav-logo">SMK</div>
         <ul class="nav-links">
             <li><a href="#about"><span class="nav-number">01.</span>Sobre</a></li>
             <li><a href="#experience"><span class="nav-number">02.</span>Experiência</a></li>
@@ -1028,9 +1044,6 @@
         </a>
         <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://twitter.com/jorgesmk" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter">
-            <i class="fab fa-twitter"></i>
         </a>
     </div>
 
