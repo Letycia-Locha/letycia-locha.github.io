@@ -90,15 +90,21 @@
         .nav-logo {
             color: var(--accent-neon);
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 0.85rem;
             font-family: 'Courier New', monospace;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             flex-shrink: 0;
             transition: all 0.3s ease;
+            border: 1px solid var(--accent-neon);
+            background: rgba(255, 95, 31, 0.1);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
         }
 
         .nav-logo:hover {
-            text-shadow: 0 0 20px rgba(255, 95, 31, 0.5);
+            background: rgba(255, 95, 31, 0.2);
+            box-shadow: 0 0 15px rgba(255, 95, 31, 0.4);
             transform: scale(1.05);
         }
 
@@ -181,10 +187,25 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 150px;
-            padding-bottom: 4rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-intro {
@@ -757,7 +778,17 @@
             }
 
             .hero {
-                padding-top: 120px;
+                flex-direction: column-reverse;
+                padding-top: 100px;
+                gap: 2rem;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 100%;
             }
 
             .hero h1 {
@@ -841,12 +872,23 @@
              HERO SECTION
              ============================================ -->
         <section class="hero">
-            <div class="hero-intro">Olá, meu nome é</div>
-            <h1>Jorge Luis Simocovski</h1>
-            <h2>Technical Product Manager | QA Leadership</h2>
-            <h3 class="hero-tagline">Transformo qualidade de software em decisão de produto baseada em dados.</h3>
-            <p class="hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
-            <a href="#work" class="hero-cta">Ver Track Record</a>
+            <div class="hero-content">
+                <div class="hero-intro">Olá, meu nome é</div>
+                <h1>Jorge Luis Simocovski</h1>
+                <h2>Technical Product Manager | QA Leadership</h2>
+                <h3 class="hero-tagline">Transformo qualidade de software em decisão de produto baseada em dados.</h3>
+                <p class="hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
+                <a href="#work" class="hero-cta">Ver Track Record</a>
+            </div>
+
+            <div class="hero-image">
+                <div class="about-photo">
+                    <div class="photo-border"></div>
+                    <div class="photo-container">
+                        <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- ============================================
@@ -886,13 +928,6 @@
                             <div class="skill-item">GenAI Agents</div>
                             <div class="skill-item">Python</div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="about-photo">
-                    <div class="photo-border"></div>
-                    <div class="photo-container">
-                        <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
                     </div>
                 </div>
             </div>
