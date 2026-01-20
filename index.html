@@ -71,20 +71,21 @@
             top: 0;
             left: 0;
             right: 0;
+            width: 100%;
             padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 3rem;
             z-index: 1000;
-            background: rgba(10, 25, 47, 0);
-            transition: background 0.3s ease, backdrop-filter 0.3s ease;
+            background: #112240;
+            border-bottom: 1px solid #233554;
+            transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            background: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 95, 31, 0.1);
+            background: #112240;
+            border-bottom: 1px solid #233554;
         }
 
         .nav-logo {
@@ -194,7 +195,19 @@
             gap: 4rem;
         }
 
-        .hero-content {
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem;
+            gap: 4rem;
+        }
+
+        .hero-content,
+        .hero-text {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -202,13 +215,29 @@
         }
 
         .hero-image {
-            flex: 1;
+            flex: 0 0 400px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .hero-intro {
+        .img-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .hero-intro,
+        .greeting {
             color: var(--accent-neon);
             font-weight: 600;
             margin-bottom: 1rem;
@@ -232,7 +261,8 @@
             line-height: 1.1;
         }
 
-        .hero-tagline {
+        .hero-tagline,
+        .hero-text h3 {
             font-size: 1.25rem;
             color: var(--accent-neon);
             font-weight: 600;
@@ -240,7 +270,8 @@
             display: block;
         }
 
-        .hero-bio {
+        .hero-bio,
+        .bio {
             max-width: 550px;
             color: var(--text-slate);
             font-size: 1rem;
@@ -248,7 +279,8 @@
             margin-bottom: 2rem;
         }
 
-        .hero-cta {
+        .hero-cta,
+        .cta-button {
             display: inline-block;
             border: 2px solid var(--accent-neon);
             color: var(--accent-neon);
@@ -258,9 +290,11 @@
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
+            width: fit-content;
         }
 
-        .hero-cta:hover {
+        .hero-cta:hover,
+        .cta-button:hover {
             background: rgba(255, 95, 31, 0.1);
             box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
             transform: translateX(4px);
@@ -871,21 +905,23 @@
         <!-- ============================================
              HERO SECTION
              ============================================ -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-intro">Olá, meu nome é</div>
-                <h1>Jorge Luis Simocovski</h1>
-                <h2>Technical Product Manager | QA Leadership</h2>
-                <h3 class="hero-tagline">Transformo qualidade de software em decisão de produto baseada em dados.</h3>
-                <p class="hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
-                <a href="#work" class="hero-cta">Ver Track Record</a>
-            </div>
+        <section id="hero" class="hero">
+            <div class="hero-container">
+                <div class="hero-text hero-content">
+                    <p class="greeting hero-intro">Olá, meu nome é</p>
+                    <h1>Jorge Luis Simocovski.</h1>
+                    <h2>Technical Product Manager | QA Leadership</h2>
+                    <h3>Transformo qualidade de software em decisão de produto baseada em dados.</h3>
+                    <p class="bio hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
+                    <a href="#work" class="cta-button hero-cta">Ver Track Record</a>
+                </div>
 
-            <div class="hero-image">
-                <div class="about-photo">
-                    <div class="photo-border"></div>
-                    <div class="photo-container">
-                        <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
+                <div class="hero-image">
+                    <div class="img-wrapper about-photo">
+                        <div class="photo-border"></div>
+                        <div class="photo-container">
+                            <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
+                        </div>
                     </div>
                 </div>
             </div>
