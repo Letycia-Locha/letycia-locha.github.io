@@ -338,6 +338,49 @@
             font-size: 1rem;
         }
 
+        /* ============================================
+           APPROACH SECTION
+           ============================================ */
+        #approach {
+            background: rgba(10, 25, 47, 0.4);
+        }
+
+        .approach-intro {
+            color: var(--text-light-slate);
+            max-width: 840px;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .approach-card {
+            background: rgba(255, 95, 31, 0.05);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 95, 31, 0.2);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .approach-title {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+        }
+
+        .approach-card p {
+            margin-bottom: 1rem;
+            color: var(--text-slate);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
         .skills-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -863,6 +906,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
             .contact-links {
                 grid-template-columns: 1fr;
             }
@@ -929,10 +976,11 @@
             <ul>
                 <li><a href="#inicio"><span class="mono-number">01.</span> Início</a></li>
                 <li><a href="#about"><span class="mono-number">02.</span> Sobre</a></li>
-                <li><a href="#experience"><span class="mono-number">03.</span> Experiência</a></li>
-                <li><a href="#projects"><span class="mono-number">04.</span> Projetos</a></li>
-                <li><a href="#skills"><span class="mono-number">05.</span> Skills</a></li>
-                <li><a href="#contact"><span class="mono-number">06.</span> Contato</a></li>
+                <li><a href="#approach"><span class="mono-number">03.</span> Abordagem</a></li>
+                <li><a href="#experience"><span class="mono-number">04.</span> Experiência</a></li>
+                <li><a href="#projects"><span class="mono-number">05.</span> Projetos</a></li>
+                <li><a href="#skills"><span class="mono-number">06.</span> Skills</a></li>
+                <li><a href="#contact"><span class="mono-number">07.</span> Contato</a></li>
             </ul>
             <a href="https://www.linkedin.com/in/jorgesimocovski/" class="resume-btn" target="_blank">Resume</a>
         </nav>
@@ -978,11 +1026,55 @@
 
             <div class="about-content">
                 <div class="about-text">
-                    <p>Minha base é Engenharia e Qualidade, mas minha atuação é em Produto: decidir o que priorizar, explicitar trade-offs e orientar times para impacto mensurável.</p>
+                    <p>Sou Technical Product Manager com 15+ anos em tecnologia, especializado em transformar qualidade de software em vantagem competitiva estratégica.</p>
 
-                    <p>Em ambientes complexos, qualidade é uma alavanca para reduzir risco e aumentar previsibilidade. Uso dados, contexto do sistema e feedback contínuo para apoiar decisões antes da entrega.</p>    
+                    <p>Minha trajetória começou como QA Engineer, evoluiu para especialista em qualidade e hoje atuo como Product Manager técnico, liderando iniciativas de produto em escala.</p>
 
-                    <p>Atuo em pre-discovery e refinamento (critérios de aceite, hipóteses e métricas) e utilizo práticas ágeis como ferramenta para alinhamento, previsibilidade e tomada de decisão — não como fim em si.</p>
+                    <p>Diferencial: combino expertise técnica profunda com pensamento de produto estruturado, equilibrando viabilidade técnica com valor de negócio.</p>
+
+                    <p>Visão de produto: em ambientes complexos, qualidade é uma alavanca para reduzir risco e aumentar previsibilidade. Uso dados, contexto do sistema e feedback contínuo para apoiar decisões antes da entrega.</p>
+
+                    <p>Impacto: já liderei transformações em 16 squads, impactando 100+ engenheiros e reduzindo bugs críticos em 65%.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             APPROACH SECTION
+             ============================================ -->
+        <section id="approach">
+            <div class="section-header">
+                <h2 class="section-title">03. Minha Abordagem de Produto</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <p class="approach-intro">
+                Sou Technical Product Manager com 15+ anos em tecnologia. Meu diferencial é combinar visão estratégica e pragmatismo técnico, tratando qualidade, dados, liderança e escala como alavancas para decisões mais seguras e impactos sustentáveis.
+            </p>
+
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h3 class="approach-title">1. Qualidade como Estratégia</h3>
+                    <p>Não vejo qualidade como custo operacional, mas como diferencial competitivo que reduz risco e acelera decisões. Em vez de olhar apenas para bugs, observo padrões de falha, pontos de fragilidade e sinais de dívida técnica.</p>
+                    <p>Ao transformar qualidade em métricas de saúde do produto, consigo priorizar com mais precisão e proteger o time de retrabalho crônico. Resultado: menos incidentes críticos e maior previsibilidade nas entregas.</p>
+                </div>
+
+                <div class="approach-card">
+                    <h3 class="approach-title">2. Data-Driven Decision Making</h3>
+                    <p>Todas as decisões são baseadas em dados acionáveis, conectando comportamento do sistema, uso do produto e resultados de negócio. Meu foco é criar métricas que orientem escolhas, não dashboards que apenas descrevem o passado.</p>
+                    <p>Esse olhar permite validar hipóteses cedo e ajustar o backlog com rapidez. Resultado: decisões mais seguras e iniciativas com ROI claro.</p>
+                </div>
+
+                <div class="approach-card">
+                    <h3 class="approach-title">3. Liderança Técnica Inclusiva</h3>
+                    <p>Lidero sem autoridade formal, conectando engenharia, dados e stakeholders para criar alinhamento real. Minha prática é dar clareza de contexto, reduzir ruído e permitir que especialistas contribuam com autonomia.</p>
+                    <p>Quando o time se sente ouvido e responsável, a execução ganha velocidade e qualidade. Resultado: squads mais autônomas e colaboração mais eficiente.</p>
+                </div>
+
+                <div class="approach-card">
+                    <h3 class="approach-title">4. Escalabilidade desde o Início</h3>
+                    <p>Toda solução é pensada para escalar desde o primeiro desenho, evitando retrabalho estrutural no futuro. Isso inclui padrões, governança leve e arquitetura orientada a reutilização.</p>
+                    <p>Essa abordagem reduz dependências e prepara o produto para crescer com segurança. Resultado: crescimento sustentado com menos gargalos técnicos.</p>
                 </div>
             </div>
         </section>
@@ -992,7 +1084,7 @@
              ============================================ -->
         <section id="experience">
             <div class="section-header">
-                <span class="section-number">03.</span>
+                <span class="section-number">04.</span>
                 <h2 class="section-title">Experiência Profissional</h2>
                 <div class="section-line"></div>
             </div>
@@ -1074,7 +1166,7 @@
              ============================================ -->
         <section id="projects">
             <div class="section-header">
-                <span class="section-number">04.</span>
+                <span class="section-number">05.</span>
                 <h2 class="section-title">Projetos</h2>
                 <div class="section-line"></div>
             </div>
@@ -1163,7 +1255,7 @@
              ============================================ -->
         <section id="skills">
             <div class="section-header">
-                <span class="section-number">05.</span>
+                <span class="section-number">06.</span>
                 <h2 class="section-title">Competências Estratégicas</h2>
                 <div class="section-line"></div>
             </div>
@@ -1198,7 +1290,7 @@
              ============================================ -->
         <section id="contact">
             <div class="contact-content">
-                <div class="contact-number">06. Contato</div>
+                <div class="contact-number">07. Contato</div>
                 <h2 class="contact-title">Vamos Conversar?</h2>
                 <p class="contact-text">Se você busca um Product Analyst, Product Owner ou PM Técnico para atuar em contextos complexos de plataforma e dados, posso ajudar a transformar sinais técnicos em decisões claras e impacto mensurável.</p>
                 
