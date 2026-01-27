@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case - Data-as-a-Product | Jorge Simocovski</title>
+    <style>
+        :root {
+            --bg-navy: #0a192f;
+            --bg-light-navy: #112240;
+            --text-slate: #8892b0;
+            --text-light-slate: #a8b2d1;
+            --text-white: #e6f1ff;
+            --accent-neon: #FF5F1F;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-navy);
+            color: var(--text-slate);
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 24px 40px;
+            border-bottom: 1px solid rgba(255, 95, 31, 0.2);
+            background: rgba(10, 25, 47, 0.9);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-badge {
+            font-family: "Fira Code", "Courier New", monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent-neon);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        a {
+            color: var(--accent-neon);
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            color: var(--text-white);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin: 16px 0 8px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 32px 0 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .card {
+            background: rgba(17, 34, 64, 0.4);
+            border: 1px solid rgba(255, 95, 31, 0.2);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        footer {
+            padding: 24px 20px 40px;
+            text-align: center;
+            color: var(--text-slate);
+            border-top: 1px solid rgba(255, 95, 31, 0.2);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-badge">SMK</div>
+    </header>
+
+    <main>
+        <p><a href="/#projects">← Voltar para Projetos</a></p>
+
+        <section>
+            <h1>Data-as-a-Product: self-service de indicadores para squads (QuickSight)</h1>
+            <p>Produto interno de dados com autosserviço para acelerar decisões e reduzir dependência de análises centralizadas.</p>
+        </section>
+
+        <section class="card">
+            <h2>Resumo executivo</h2>
+            <ul>
+                <li>Produto interno de dados para reduzir dependência de análises centralizadas.</li>
+                <li>Estratégia de adoção via self-service e governança mínima.</li>
+                <li>Priorização com foco em quick win alinhado a métricas.</li>
+                <li>Instrumentação de uso via acessos (adoção orgânica).</li>
+                <li>Resultado: 1.5k acessos (desde fev/25) e mais autonomia para squads.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contexto e problema</h2>
+            <p>Acesso a indicadores era limitado e concentrado, gerando fila para relatórios, atraso em decisões e baixa autonomia das squads.</p>
+        </section>
+
+        <section>
+            <h2>Objetivo (incluindo métricas de sucesso)</h2>
+            <ul>
+                <li>Habilitar self-service com indicadores acessíveis e confiáveis.</li>
+                <li>Aumentar autonomia das squads para análises do dia a dia.</li>
+                <li>Métricas: acessos no QuickSight e redução de solicitações manuais (quando aplicável).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Solução (alto nível)</h2>
+            <ul>
+                <li>Dashboards no QuickSight consumindo dados tratados via SQL/Athena.</li>
+                <li>Padronização de indicadores e filtros para uso recorrente.</li>
+                <li>Onboarding com tech leads e ciclo de feedback para evolução incremental.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Trade-off principal</h2>
+            <p>Entreguei primeiro o dashboard de maior impacto e mais conectado às métricas de sucesso, deixando refinamentos e expansões para ciclos seguintes.</p>
+        </section>
+
+        <section>
+            <h2>Decisão Difícil</h2>
+            <p>Havia ansiedade para entregar rapidamente a visão completa (Bugs + Código + IA), mas optei por priorizar primeiro o dashboard de Bugs por ser o item mais conectado às métricas críticas e por gerar credibilidade rápida. Isso criou momentum e viabilizou a expansão do roadmap nos ciclos seguintes.</p>
+        </section>
+
+        <section>
+            <h2>Como medi sucesso</h2>
+            <ul>
+                <li>Adoção: 1.5k acessos (desde fev/25) e recorrência.</li>
+                <li>Autonomia: redução de solicitações manuais ao time central + feedback de leads.</li>
+                <li>Tempo de detecção: KR2: de 7 dias para &lt;12h.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Impacto</h2>
+            <ul>
+                <li>1.5k acessos (desde fev/25).</li>
+                <li>Redução de dependência de relatórios centralizados.</li>
+                <li>Decisão mais rápida baseada em dados disponíveis.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Próximos passos</h2>
+            <ul>
+                <li>Evoluir para visão histórica e tendências (não só foto do momento).</li>
+                <li>Melhorar instrumentação: recorrência por persona/squad e ações tomadas.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Jorge Simocovski © 2026 | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
