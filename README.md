@@ -1,42 +1,48 @@
-# Portfólio — Jorge Simocovski
+# Portfólio — Letycia Andrade Locha
 
-Este repositório contém o código-fonte do meu portfólio profissional público.
+Este repositório contém o código-fonte do meu portfólio profissional, focado na transição de carreira da Medicina Veterinária para a **Tecnologia (Dados & Analytics)**.
 
-O portfólio foi criado para apresentar minha atuação como **Product Analyst / Product Owner / PM Técnico**, com foco em **decisão, trade-offs e impacto** em ambientes complexos de plataforma e dados.
+Atualmente, atuo como estagiária no **Itaú Unibanco**, onde aplico rigor analítico e comunicação estratégica para viabilizar indicadores de qualidade de software através de engenharia de dados.
 
-👉 Portfólio online: https://jorgesmk.github.io/Jorge-Simocovski/
+👉 Portfólio online: https://letycia-locha.github.io/
 
 ---
 
-## 🧠 Contexto
+## 🧠 Contexto e Atuação
 
-Minha base é Engenharia e Qualidade, mas minha atuação é em Produto.  
-Uso conhecimento técnico, dados e práticas ágeis para **orientar decisões de priorização**, reduzir risco e aumentar previsibilidade — não para rodar framework ou produzir código por volume.
+Minha trajetória é movida pela capacidade de aprendizado ágil e resiliência. No ecossistema de dados, meu foco não é apenas a ferramenta, mas a **integridade da informação** e o valor que ela entrega ao negócio.
 
-Este repositório existe como **suporte técnico ao portfólio**, não como vitrine de engenharia ou projeto open source.
+Atuo em um papel *Cross*, traduzindo necessidades técnicas em estruturas de dados eficientes (SQL/Athena) e visualizações acionáveis (QuickSight), sempre com um olhar voltado para a **Qualidade e Governança**.
 
 ---
 
 ## 🧩 Sobre o projeto
 
-- Portfólio **onepage**, com navegação por âncoras
-- Estrutura pensada para leitura rápida por recrutadores e gestores
-- Cases organizados no formato **Problema → Decisão → Impacto**
-- Qualidade, dados e Agile tratados como **meios**, não como fim
+- **Arquitetura Onepage:** Navegação fluida focada em leitura rápida e objetiva.
+- **Destaque Técnico:** Cards de competências divididos por pilares (Engenharia, Qualidade, Liderança).
+- **Roadmap Transparente:** Exibição pública de metas de aprendizado (PySpark, Data Quality) e horas dedicadas aos estudos.
+- **Cases Reais:** Projetos estruturados no formato **Problema → Decisão → Resultado**.
 
 ---
 
-## 🛠️ Implementação (apoio técnico)
+## 🛠️ Stack Tecnológica
 
-- HTML, CSS e JavaScript vanilla
-- Design system simples via CSS custom properties
-- Scripts auxiliares para automações pontuais
-- Deploy automático via GitHub Pages
+- **Cloud & Big Data:** AWS (Athena, Glue, S3), Apache Iceberg.
+- **Linguagens & Bibliotecas:** SQL, Python (Pandas, NumPy).
+- **Visualização:** AWS QuickSight.
+- **Frontend:** HTML5, CSS3 (Custom Properties) e JavaScript Vanilla.
+- **Deploy:** GitHub Pages.
 
 ---
 
-## ▶️ Executar localmente (opcional)
+## 🚀 Liderança & Comunidade
+
+Além da atuação técnica, ocupo papéis de liderança na comunidade **ProGirls**, contribuindo para a estruturação de regimentos internos, documentação e atuando como porta-voz em eventos e palestras de tecnologia.
+
+---
+
+## ▶️ Como visualizar localmente
 
 ```bash
-npm install
-npm run start
+# Basta clonar o repositório e abrir o arquivo index.html no seu navegador
+git clone [https://github.com/Letycia-Locha/letycia-locha.github.io.git](https://github.com/Letycia-Locha/letycia-locha.github.io.git)
