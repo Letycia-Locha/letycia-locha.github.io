@@ -968,6 +968,10 @@
                 padding: 0 15px;
             }
 
+            #navbar nav {
+                min-width: 0;
+            }
+
             .section-header {
                 flex-wrap: wrap;
             }
@@ -991,12 +995,28 @@
             }
 
             #navbar nav ul {
+                display: flex;
+                gap: 0.75rem;
+                overflow-x: auto;
+                white-space: nowrap;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            #navbar nav ul::-webkit-scrollbar {
                 display: none;
             }
 
+            #navbar nav ul li a {
+                font-size: 11px;
+            }
+
+            #navbar nav ul li a .mono-number {
+                margin-right: 0.15rem;
+            }
+
             .resume-btn {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.75rem;
+                display: none;
             }
         }
 
