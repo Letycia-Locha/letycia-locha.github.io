@@ -7,7 +7,7 @@ const PAGES = ['/', '/about/', '/projects/'];
 const OUT = path.join(process.cwd(), 'screenshots');
 
 function fnameFor(p) {
-  const n = p.replace(/(^\/+|\/+$/g, '') || 'home';
+  const n = p.replace(/(^\/+|\/+$)/g, '') || 'home';
   return n.replace(/[^a-z0-9\-]/gi, '_');
 }
 
