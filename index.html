@@ -1442,7 +1442,7 @@
                         eficiência de análises</div>
                 </div>
                 <div class="evolution-column">
-                    <div class="project-featured">Featured Project</div>
+                    <div class="project-featured">Case em atuação</div>
                     <h3 class="project-title">Governança e Self-Service de Indicadores de Qualidade</h3>
                     <p class="project-description"><strong>Problema:</strong> Os dados de qualidade de software estavam
                         dispersos e sem padronização, exigindo exploração manual recorrente e gerando baixa confiança
@@ -1478,6 +1478,43 @@
                 </div>
             </div>
 
+            <div class="project">
+                <div class="project-image">
+                    <div class="project-metric">Processamento distribuído com Spark</div>
+                </div>
+                <div class="evolution-column">
+                    <div class="project-featured">Study Project</div>
+                    <h3 class="project-title">Engenharia de Dados e Analytics: Fluxo de Fundos de Investimento (CVM)</h3>
+                    <p class="project-description"><strong>
+                        <strong>Problema:</strong> Os dados de informes diários de fundos de investimento da CVM eram disponibilizados em arquivos brutos (CSV/ZIP) de alto volume, com metadados faltantes (mais de 567 mil valores nulos em IDs de subclasse) e falta de padronização, dificultando análises de tendência de mercado em tempo hábil.<br>
+    
+                        <strong>Decisão:</strong> Implementar uma <strong>Arquitetura Medallion</strong> utilizando <strong>PySpark</strong> para processamento distribuído. Os dados foram estruturados em camadas (Bronze, Silver e Gold), utilizando o formato <strong>Apache Parquet com compressão Snappy</strong> para garantir alta performance de leitura e economia de armazenamento. O tratamento de dados garantiu a integridade de métricas financeiras sensíveis.<br>
+                        
+                        <strong>Resultado:</strong> Consolidação de uma "Fonte Única de Verdade" que permitiu identificar uma euforia no mercado em Janeiro de 2024, com captação líquida superior a <strong>R$ 109 bilhões</strong>. A estrutura suporta análises de Market Share, Volatilidade de Patrimônio e Ranking de Eficiência por classe de fundo.<br>
+                        
+                        <strong>Sinal de sucesso:</strong> Automação do pipeline de dados com governança (via GitHub Secrets), redução drástica do tempo de processamento comparado a métodos tradicionais e disponibilização de datasets governados para geração de dashboards analíticos.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>PySpark</span>
+                        <span>Apache Parquet</span>
+                        <span>Arquitetura Medallion</span>
+                        <span>Analytics / Plotly</span>
+                        <span>Git Flow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Letycia-Locha/processamento_distribuido_spark" class="project-link" title="GitHub"
+                            aria-label="Abrir GitHub da Letycia">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/letycia-locha/" class="project-link" title="LinkedIn"
+                            aria-label="Abrir LinkedIn da Letycia">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </section>
         <!-- ============================================
              ROADMAP SECTION
@@ -1490,18 +1527,6 @@
             </div>
 
             <div class="roadmap-grid">
-
-                <div class="roadmap-card">
-                    <div class="roadmap-chip-wrap">
-                        <span class="roadmap-chip">Q1 2026</span>
-                    </div>
-                    <h3 class="roadmap-card-title">Processamento Distribuído com Spark</h3>
-                    <p class="roadmap-card-text">
-                        Aprofundamento em arquiteturas de Big Data, focando na transição de scripts isolados para
-                        processamento escalável em clusters utilizando <strong>PySpark</strong> e otimização de jobs no
-                        <strong>AWS Glue</strong>.
-                    </p>
-                </div>
 
                 <div class="roadmap-card">
                     <div class="roadmap-chip-wrap">
