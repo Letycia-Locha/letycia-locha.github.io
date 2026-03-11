@@ -1,4 +1,3 @@
 node_modules/
-screenshots/
+screenshots
 package-lock.json
-copy.md
