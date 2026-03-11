@@ -14,42 +14,25 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MBSNCNWPE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDZWZWQY73"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-9MBSNCNWPE', {
+        gtag('config', 'G-LDZWZWQY73', {
             anonymize_ip: true,
             send_page_view: true
         });
     </script>
 
+    <!-- Design System Tokens -->
+    <link rel="stylesheet" href="assets/css/tokens.css">
+
     <style>
         /* ============================================
     ROOT & RESET
     ============================================= */
-        :root {
-            --bg-navy: #000020;
-            --bg-light-navy: #171a4a;
-            --text-slate: #8892b0;
-            --text-light-slate: #a8b2d1;
-            --text-white: #e6f1ff;
-            --accent-neon: #b1033a;
-            --accent-neon-dim: rgba(177, 3, 58, 0.1);
-            --space-xs: 0.5rem;
-            --space-sm: 0.75rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-xxl: 3rem;
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.2);
-            --shadow-elevated: 0 10px 24px rgba(0, 0, 0, 0.15);
-        }
 
         * {
             margin: 0;
@@ -62,7 +45,7 @@
         }
 
         body {
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: var(--font-primary);
             background-color: var(--bg-navy);
             color: var(--text-slate);
             line-height: 1.8;
@@ -84,7 +67,7 @@
         .section-title,
         .project-title,
         .pillar-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 800;
             letter-spacing: -0.02em;
             color: var(--text-white);
@@ -94,7 +77,7 @@
         .mono-number,
         .project-tech span,
         .logo-badge {
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
             font-weight: 500;
         }
 
@@ -141,7 +124,7 @@
         }
 
         .logo-badge {
-            font-family: 'Fira Code', 'Courier New', monospace;
+            font-family: var(--font-mono);
             font-weight: 700;
             font-size: 1.5rem;
             color: #f73975;
@@ -191,7 +174,7 @@
         #navbar nav ul li a .mono-number {
             color: var(--accent-neon);
             margin-right: 0.3rem;
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
         }
 
         #navbar nav ul li a:hover {
@@ -244,7 +227,7 @@
             color: var(--accent-neon);
             font-weight: 700;
             font-size: 1.25rem;
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
         }
 
         .section-title {
@@ -293,7 +276,7 @@
         }
 
         .big-role {
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-primary);
             font-size: 2rem;
             font-weight: 500;
             color: var(--text-light-slate);
@@ -309,7 +292,7 @@
         }
 
         .thesis {
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-primary);
             font-size: 1.2rem;
             color: var(--accent-neon);
             font-weight: 600;
@@ -571,7 +554,7 @@
         }
 
         .evolution-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 600;
             color: var(--text-white);
             margin-bottom: 1.5rem;
@@ -605,7 +588,7 @@
         .skill-progress-label,
         .skill-progress-value {
             font-size: 0.85rem;
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
         }
 
         .skill-progress-label {
@@ -664,7 +647,7 @@
         }
 
         .study-hours-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
             font-size: 1.3rem;
             color: var(--text-white);
             margin-bottom: var(--space-xl);
@@ -679,14 +662,14 @@
         }
 
         .hour-value {
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
             font-size: 2rem;
             color: var(--accent-neon);
             display: block;
         }
 
         .hour-label {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 600;
             font-size: 0.9rem;
             color: var(--text-light-slate);
@@ -735,7 +718,7 @@
         }
 
         .roadmap-chip {
-            font-family: 'Fira Code', monospace;
+            font-family: var(--font-mono);
             font-size: 0.75rem;
             color: var(--accent-neon);
             background: rgba(177, 3, 58, 0.1);
@@ -744,7 +727,7 @@
         }
 
         .roadmap-card-title {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
             color: var(--text-white);
             font-size: 1.1rem;
             margin-bottom: var(--space-md);
