@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="white">
+  <path d="M32 4L6 18v28l26 14 26-14V18L32 4z" fill="none" stroke="white" stroke-width="2.5"/>
+  <path d="M32 18v28M20 24l12 6 12-6" fill="none" stroke="white" stroke-width="2.5"/>
+  <text x="32" y="40" text-anchor="middle" font-size="11" font-weight="bold" font-family="sans-serif" fill="white">NP</text>
+</svg>

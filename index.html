@@ -1,1225 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Letycia Locha - Engenheira de Dados & Analytics | Deep Navy & Neon Portfolio">
-    <meta name="theme-color" content="#0a192f">
+    <meta name="description" content="Letycia Locha - Engenharia de Dados, Analytics e Qualidade de Software">
+    <meta name="theme-color" content="#000020">
     <title>Letycia Locha</title>
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&family=Fira+Code:wght@500&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="assets/fonts/google-sans/GoogleSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/google-sans/GoogleSans-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDZWZWQY73"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-LDZWZWQY73', {
-            anonymize_ip: true,
-            send_page_view: true
-        });
-    </script>
-
-    <!-- Design System Tokens -->
-    <link rel="stylesheet" href="assets/css/tokens.css">
-
-    <style>
-        /* ============================================
-    ROOT & RESET
-    ============================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--bg-navy);
-            color: var(--text-slate);
-            line-height: 1.8;
-            font-size: 17px;
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--accent-neon);
-            outline-offset: 3px;
-            box-shadow: 0 0 0 2px rgba(230, 241, 255, 0.25);
-            border-radius: 4px;
-        }
-
-        /* ============================================
-       FONTES E HIERARQUIA VISUAL
-       ============================================ */
-        .big-name,
-        .section-title,
-        .project-title,
-        .pillar-title {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: var(--text-white);
-        }
-
-        .section-number,
-        .mono-number,
-        .project-tech span,
-        .logo-badge {
-            font-family: var(--font-mono);
-            font-weight: 500;
-        }
-
-        /* ============================================
-           SCROLLBAR
-           ============================================ */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-navy);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-neon);
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f73975;
-        }
-
-        /* ============================================
-           NAVBAR ESTILIZADA
-           ============================================ */
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 76px;
-            background: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: none;
-            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-
-        .logo-badge {
-            font-family: var(--font-mono);
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #f73975;
-            border: none;
-            background: none;
-            padding: 2px 6px;
-            cursor: default;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .logo-badge:hover {
-            color: #f73975;
-            letter-spacing: 2px;
-        }
-
-        #navbar nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 30px;
-            padding: 0;
-            background: transparent;
-            border: none;
-            position: static;
-            height: auto;
-            box-shadow: none;
-        }
-
-        #navbar nav ul {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #navbar nav ul li a {
-            color: var(--text-slate);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        #navbar nav ul li a .mono-number {
-            color: var(--accent-neon);
-            margin-right: 0.3rem;
-            font-family: var(--font-mono);
-        }
-
-        #navbar nav ul li a:hover {
-            color: var(--accent-neon);
-        }
-
-        .resume-btn {
-            border: 1px solid var(--accent-neon);
-            color: var(--accent-neon);
-            padding: 0.6rem 1rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .resume-btn:hover {
-            background: rgba(255, 95, 31, 0.1);
-            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* ============================================
-           MAIN CONTAINER
-           ============================================ */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ============================================
-           SECTIONS COMMON STYLES
-           ============================================ */
-        section {
-            padding: 5rem 0;
-            scroll-margin-top: 80px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-number {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 1.25rem;
-            font-family: var(--font-mono);
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--text-white);
-        }
-
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: rgba(255, 95, 31, 0.2);
-            margin-left: 1rem;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        #inicio {
-            padding-top: 120px;
-        }
-
-        .hero-wrapper {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-left {
-            flex: 1;
-            max-width: 650px;
-        }
-
-        .greeting {
-            color: var(--accent-neon);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .big-name {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            /* Garante que o nome não se misture ao cargo */
-        }
-
-        .big-role {
-            font-family: var(--font-primary);
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--text-light-slate);
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-        }
-
-        .big-role .highlight {
-            color: var(--accent-neon);
-            border-left: 3px solid var(--accent-neon);
-            padding-left: 15px;
-            margin-left: 10px;
-        }
-
-        .thesis {
-            font-family: var(--font-primary);
-            font-size: 1.2rem;
-            color: var(--accent-neon);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .bio {
-            color: var(--text-slate);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-container {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .primary-btn {
-            border: 2px solid var(--accent-neon);
-            color: var(--accent-neon);
-            padding: 1rem 1.75rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .primary-btn:hover {
-            background: var(--accent-neon);
-            color: var(--bg-navy);
-            box-shadow: 0 0 20px rgba(255, 95, 31, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .hero-right {
-            flex: 0 0 350px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-frame {
-            width: 300px;
-            height: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid var(--accent-neon);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .profile-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .profile-frame:hover img {
-            transform: scale(1.05);
-        }
-
-        /* ============================================
-           ABOUT SECTION
-           ============================================ */
-        #about {
-            background: rgba(17, 34, 64, 0.3);
-            padding-inline: clamp(0.75rem, 2vw, 2rem);
-            border-radius: var(--radius-lg);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .about-text {
-            color: var(--text-slate);
-            line-height: 1.85;
-            max-width: 68ch;
-            margin-inline: auto;
-        }
-
-        .about-text p {
-            margin-bottom: 1.75rem;
-            font-size: 1rem;
-            text-wrap: pretty;
-        }
-
-        /* ============================================
-           APPROACH SECTION
-           ============================================ */
-        #approach {
-            background: rgba(10, 25, 47, 0.4);
-            padding-inline: clamp(0.75rem, 2vw, 2rem);
-            margin-top: var(--space-xl);
-            border-radius: var(--radius-lg);
-        }
-
-        .approach-intro {
-            color: var(--text-light-slate);
-            max-width: 68ch;
-            margin-bottom: 2.5rem;
-            font-size: 1.06rem;
-            line-height: 1.9;
-            text-wrap: pretty;
-            margin-inline: auto;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            padding-inline: clamp(0.25rem, 1vw, 0.75rem);
-        }
-
-        .approach-card {
-            background: rgba(255, 95, 31, 0.05);
-            padding: 1.9rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 95, 31, 0.2);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .approach-title {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 1.2rem;
-            line-height: 1.35;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
-        }
-
-        .approach-card p {
-            margin-bottom: 1rem;
-            color: var(--text-slate);
-            line-height: 1.85;
-            font-size: 1rem;
-            text-wrap: pretty;
-        }
-
-        .skills-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-white);
-            margin: 2rem 0 1.5rem;
-        }
-
-        .skills-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .skills-pillar {
-            background: rgba(255, 95, 31, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-neon);
-        }
-
-        .pillar-title {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-item {
-            color: var(--text-slate);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-
-        .skill-item::before {
-            content: ">";
-            color: var(--accent-neon);
-            font-weight: bold;
-        }
-
-        /* ============================================
-           EXPERIENCE SECTION
-           ============================================ */
-        .exp-item {
-            background: rgba(255, 95, 31, 0.04);
-            padding: var(--space-lg);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--accent-neon);
-            margin-bottom: var(--space-lg);
-        }
-
-        .exp-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-            margin-bottom: var(--space-xs);
-        }
-
-        .exp-company {
-            color: var(--text-white);
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .exp-date {
-            color: var(--accent-neon);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .exp-role {
-            color: var(--text-light-slate);
-            font-size: 0.98rem;
-            margin-bottom: var(--space-md);
-        }
-
-        .exp-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .exp-list li {
-            position: relative;
-            color: var(--text-slate);
-            padding-left: 1rem;
-            margin-bottom: var(--space-sm);
-            line-height: 1.75;
-        }
-
-        .exp-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .exp-list li::before {
-            content: ">";
-            position: absolute;
-            left: 0;
-            color: var(--accent-neon);
-            font-weight: 700;
-        }
-
-        /* ============================================
-           SKILLS EVOLUTION SECTION
-           ============================================ */
-        .evolution-container {
-            max-width: 820px;
-            margin: 2.5rem auto 0;
-        }
-
-        .evolution-title {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            color: var(--text-white);
-            margin-bottom: 1.5rem;
-        }
-
-        .evolution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 3rem;
-        }
-
-        .evolution-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .skill-progress-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .skill-progress-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-
-        .skill-progress-label,
-        .skill-progress-value {
-            font-size: 0.85rem;
-            font-family: var(--font-mono);
-        }
-
-        .skill-progress-label {
-            color: var(--text-light-slate);
-        }
-
-        .skill-progress-value {
-            color: var(--accent-neon);
-        }
-
-        .skill-progress-track {
-            background: var(--bg-light-navy);
-            height: 6px;
-            border-radius: 3px;
-        }
-
-        .skill-progress-bar {
-            background: var(--accent-neon);
-            height: 100%;
-            border-radius: 3px;
-        }
-
-        .progress-20 {
-            width: 20%;
-        }
-
-        .progress-55 {
-            width: 55%;
-        }
-
-        .progress-60 {
-            width: 60%;
-        }
-
-        .progress-70 {
-            width: 70%;
-        }
-
-        .progress-75 {
-            width: 75%;
-        }
-
-        .progress-80 {
-            width: 80%;
-        }
-
-        /* ============================================
-           STUDY HOURS SECTION
-           ============================================ */
-        .study-hours-container {
-            margin-top: var(--space-xxl);
-            padding: var(--space-xl);
-            background: rgba(17, 34, 64, 0.2);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(177, 3, 58, 0.2);
-        }
-
-        .study-hours-title {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            color: var(--text-white);
-            margin-bottom: var(--space-xl);
-            text-align: center;
-        }
-
-        .study-hours-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-xl);
-            text-align: center;
-        }
-
-        .hour-value {
-            font-family: var(--font-mono);
-            font-size: 2rem;
-            color: var(--accent-neon);
-            display: block;
-        }
-
-        .hour-label {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-light-slate);
-        }
-
-        /* ============================================
-           ROADMAP SECTION
-           ============================================ */
-        #roadmap {
-            margin-top: 4rem;
-            margin-bottom: 6rem;
-        }
-
-        .roadmap-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 2.5rem;
-        }
-
-        .roadmap-divider {
-            flex-grow: 1;
-            height: 1px;
-            background: rgba(168, 178, 209, 0.2);
-        }
-
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .roadmap-card {
-            padding: 1.8rem;
-            background: rgba(23, 26, 74, 0.3);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(177, 3, 58, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .roadmap-chip-wrap {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: var(--space-md);
-        }
-
-        .roadmap-chip {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--accent-neon);
-            background: rgba(177, 3, 58, 0.1);
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        .roadmap-card-title {
-            font-family: var(--font-heading);
-            color: var(--text-white);
-            font-size: 1.1rem;
-            margin-bottom: var(--space-md);
-            line-height: 1.4;
-        }
-
-        .roadmap-card-text {
-            font-size: 0.95rem;
-            color: var(--text-slate);
-            line-height: 1.6;
-            text-wrap: pretty;
-        }
-
-        /* ============================================
-           PROJECTS SECTION
-           ============================================ */
-        .project {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 5.5rem;
-            position: relative;
-        }
-
-        .project-featured {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.75rem;
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border: 1px solid rgba(177, 3, 58, 0.45);
-            border-radius: 999px;
-            text-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
-        }
-
-        .project-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-white);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-description {
-            color: var(--text-slate);
-            line-height: 1.85;
-            margin-bottom: 1.5rem;
-            max-width: 62ch;
-            text-wrap: pretty;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light-slate);
-        }
-
-        .project-tech span {
-            padding-right: 1rem;
-            border-right: 1px solid rgba(255, 95, 31, 0.3);
-        }
-
-        .project-tech span:last-child {
-            border-right: none;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .project-link {
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 1.25rem;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--accent-neon);
-        }
-
-        .project-image {
-            background: var(--bg-light-navy);
-            border-radius: 4px;
-            padding: 3rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-            border: 1px solid rgba(255, 95, 31, 0.2);
-        }
-
-        .project-metric {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--accent-neon);
-            text-align: center;
-            line-height: 1.25;
-        }
-
-        /* ============================================
-           CONTACT SECTION
-           ============================================ */
-        #contact {
-            background: rgba(17, 34, 64, 0.3);
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 62ch;
-            margin: 0 auto;
-        }
-
-        .contact-number {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-title {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-white);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-text {
-            color: var(--text-slate);
-            font-size: 1.02rem;
-            line-height: 1.85;
-            margin-bottom: 2rem;
-            text-wrap: pretty;
-        }
-
-        .contact-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-link {
-            background: rgba(255, 95, 31, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-neon);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 95, 31, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 95, 31, 0.2);
-        }
-
-        .contact-link-label {
-            color: var(--accent-neon);
-            font-weight: 700;
-            font-size: 0.92rem;
-            display: block;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.02em;
-            text-shadow: 0 0 1px rgba(0, 0, 0, 0.35);
-        }
-
-        .contact-link-value {
-            color: var(--text-white);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            text-align: center;
-            padding: 3.5rem 0;
-            border-top: 1px solid rgba(255, 95, 31, 0.25);
-            color: var(--text-slate);
-            font-size: 0.9rem;
-        }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 1024px) {
-            .hero-wrapper {
-                gap: 32px;
-            }
-
-            .skills-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2.25rem;
-            }
-
-            .exp-timeline {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .project {
-                grid-template-columns: 1fr;
-                margin-bottom: 4.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #navbar {
-                padding: 10px 20px;
-                height: 68px;
-            }
-
-            .logo-badge {
-                font-size: 1.2rem;
-            }
-
-            #navbar nav ul {
-                gap: 1.5rem;
-            }
-
-            #navbar nav ul li a {
-                font-size: 12px;
-            }
-
-            main {
-                padding: 2rem 15px;
-            }
-
-            section {
-                padding: 4rem 0;
-            }
-
-            #inicio {
-                padding-top: 100px;
-            }
-
-            .hero-wrapper {
-                flex-direction: column-reverse;
-                gap: 1.5rem;
-            }
-
-            .hero-right {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 280px;
-                margin: 0 auto;
-            }
-
-            .profile-frame {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 1;
-            }
-
-            .big-name {
-                font-size: 2.5rem;
-            }
-
-            .big-role {
-                font-size: 1.75rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .project-title {
-                font-size: 1.5rem;
-            }
-
-            .contact-title {
-                font-size: 2rem;
-            }
-
-            .skills-section {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .approach-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                grid-template-columns: 1fr;
-            }
-
-            .exp-item {
-                padding: var(--space-md);
-            }
-
-            .project-image {
-                min-height: 200px;
-                padding: 2rem;
-            }
-
-            .project-metric {
-                font-size: 1.6rem;
-                line-height: 1.25;
-            }
-
-            .evolution-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
-
-            .study-hours-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
-
-            .roadmap-header {
-                flex-wrap: wrap;
-            }
-
-            .roadmap-divider {
-                flex: 1 100%;
-            }
-
-            .roadmap-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            #navbar {
-                padding: 8px 14px;
-            }
-
-            #navbar nav {
-                min-width: 0;
-            }
-
-            #navbar nav ul {
-                gap: 0.75rem;
-                overflow-x: auto;
-                white-space: nowrap;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-
-            #navbar nav ul::-webkit-scrollbar {
-                display: none;
-            }
-
-            #navbar nav ul li a {
-                font-size: 11px;
-            }
-
-            #navbar nav ul li a .mono-number {
-                margin-right: 0.15rem;
-            }
-
-            .resume-btn {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #navbar {
-                padding: 0 15px;
-            }
-
-            #navbar nav {
-                min-width: 0;
-            }
-
-            .section-header {
-                flex-wrap: wrap;
-            }
-
-            .section-line {
-                flex: 1 100%;
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-
-            .big-name {
-                font-size: 1.75rem;
-            }
-
-            .big-role {
-                font-size: 1.25rem;
-            }
-
-            .thesis {
-                font-size: 1rem;
-            }
-
-            .resume-btn {
-                display: none;
-            }
-        }
-
-        .logo-photo {
-            width: auto;
-            max-height: 40px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-photo {
-            width: 220px;
-            height: auto;
-            border-radius: 14px;
-            object-fit: cover;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        @media (max-width: 768px) {
-            .logo-photo {
-                max-height: 34px;
-            }
-
-            .hero-photo {
-                width: 180px;
-                margin: 0 auto 24px;
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- ============================================
-         NAVBAR
-         ============================================ -->
     <header id="navbar">
-        <div class="logo-badge">
-            <img src="assets/images/letycialocha/logo - Editado.png"
-                alt="Letycia Andrade Locha — Engenheira de Dados & Analytics" class="logo-photo">
+        <div class="navbar-bar">
+            <a class="logo-badge" href="#inicio" aria-label="Voltar ao início">
+                <img src="assets/images/letycialocha/logo-l-monogram.svg" alt="Monograma L de Letycia Locha" class="logo-mark">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="nav-toggle-label">Menu</span>
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
+            </button>
         </div>
-        <nav>
+
+        <nav id="primary-nav" class="nav-panel" aria-label="Navegação principal">
             <ul>
-                <li><a href="#inicio"><span class="mono-number">01.</span> Início</a></li>
-                <li><a href="#about"><span class="mono-number">02.</span> Sobre</a></li>
-                <li><a href="#approach"><span class="mono-number">03.</span> Atuação</a></li>
-                <li><a href="#experience"><span class="mono-number">04.</span> Experiência</a></li>
-                <li><a href="#projects"><span class="mono-number">05.</span> Projetos</a></li>
-                <li><a href="#roadmap"><span class="mono-number">06.</span> Roadmap</a></li>
-                <li><a href="#skills"><span class="mono-number">07.</span> Skills</a></li>
-                <li><a href="#contact"><span class="mono-number">08.</span> Contato</a></li>
+                <li><a class="nav-link" href="#inicio"><span class="mono-number">01.</span> Início</a></li>
+                <li><a class="nav-link" href="#about"><span class="mono-number">02.</span> Sobre</a></li>
+                <li><a class="nav-link" href="#approach"><span class="mono-number">03.</span> Atuação</a></li>
+                <li><a class="nav-link" href="#ferramentas"><span class="mono-number">04.</span> Ferramentas</a></li>
+                <li><a class="nav-link" href="#experience"><span class="mono-number">05.</span> Experiência</a></li>
+                <li><a class="nav-link" href="#projects"><span class="mono-number">06.</span> Projetos</a></li>
+                <li><a class="nav-link" href="#roadmap"><span class="mono-number">07.</span> Roadmap</a></li>
+                <li><a class="nav-link" href="#contact"><span class="mono-number">08.</span> Contato</a></li>
             </ul>
-            <a href="https://www.linkedin.com/in/letycia-locha/" class="resume-btn" target="_blank"
-                rel="noopener noreferrer">Resume</a>
+            <a href="https://www.linkedin.com/in/letycia-locha/" class="resume-btn" target="_blank" rel="noopener noreferrer">Currículo</a>
         </nav>
     </header>
 
-    <!-- ============================================
-         MAIN CONTENT
-         ============================================ -->
     <main>
-        <!-- ============================================
-             HERO SECTION
-             ============================================ -->
         <section id="inicio">
             <div class="hero-wrapper">
                 <div class="hero-left">
                     <p class="greeting">Olá, meu nome é</p>
                     <h1 class="big-name">Letycia Andrade Locha.</h1>
-                    <h2 class="big-role">Engenheira de Dados & Analytics <span class="highlight">| Estagiária em Dados e
-                            Qualidade </span></h2>
+                    <h2 class="big-role">
+                        <span class="big-role-primary">Engenheira de Dados & Analytics</span>
+                        <span class="highlight">Estagiária em Dados e Qualidade</span>
+                    </h2>
                     <p class="thesis">Transformar dados brutos em informação acessível é o propósito que me move.</p>
-                    <p class="bio">Atualmente focada na estruturação de dados com SQL e Athena, visualização avançada
-                        com Quicksight e automação de fluxos com AWS Glue, unindo rigor analítico à visão de negócios.
-                    </p>
+                    <p class="bio">Atualmente focada na construção de bases especializadas para observabilidade de Qualidade, automação de fluxos com AWS Glue e visualização de indicadores com QuickSight, unindo rigor analítico à melhoria contínua de processos.</p>
                     <div class="cta-container">
                         <a href="#projects" class="primary-btn">Meus projetos</a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/Letycia-Locha" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hero-social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/letycia-locha/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hero-social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <div class="hero-right">
-                    <div class="profile-frame">
-                        <img src="assets/images/letycialocha/letycia.png.jpg"
-                            alt="Letycia Andrade Locha — Engenheira de Dados & Analytics" class="hero-photo">
+                    <div class="mastery-card">
+                        <div class="mastery-ornament" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="profile-frame">
+                            <span class="frame-corner frame-corner--top-left" aria-hidden="true"></span>
+                            <span class="frame-corner frame-corner--top-right" aria-hidden="true"></span>
+                            <span class="frame-corner frame-corner--bottom-left" aria-hidden="true"></span>
+                            <span class="frame-corner frame-corner--bottom-right" aria-hidden="true"></span>
+                            <div class="profile-frame__inner">
+                                <img
+                                    src="assets/images/letycialocha/letycia.png.jpg"
+                                    alt="Letycia Andrade Locha — Engenheira de Dados e Analytics"
+                                    class="hero-photo"
+                                    loading="eager"
+                                    decoding="async">
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================
-             ABOUT SECTION
-             ============================================ -->
         <section id="about">
             <div class="section-header">
                 <span class="section-number">02.</span>
@@ -1229,29 +99,14 @@
 
             <div class="about-content">
                 <div class="about-text">
-                    <p>Atuo no Itaú Unibanco em um papel Cross, onde utilizo minha <strong>comunicação
-                            estratégica</strong> para traduzir necessidades de negócio em estruturas de dados
-                        eficientes.</p>
-
-                    <p>Minha trajetória é marcada por uma alta capacidade de <strong>aprendizado rápido</strong> e
-                        <strong>adaptabilidade</strong>, o que me permitiu manejar ferramentas como SQL e Athena em
-                        pouco tempo e aplicá-las em cenários reais do banco.
-                    </p>
-
-                    <p>Aplico <strong>resiliência</strong> e rigor analítico na resolução de problemas técnicos
-                        (troubleshooting), garantindo a integridade do dado desde a ingestão via AWS Glue até a entrega
-                        final em dashboards no QuickSight.</p>
-
-                    <p><i>Evidências:</i> Processos de ETL automatizados, dashboards autogerenciáveis e uma atuação
-                        colaborativa que reduz a distância entre desenvolvedores e qualidade de software.</p>
+                    <p>Atuo no Itaú Unibanco em um papel cross, onde utilizo minha <strong>comunicação estratégica</strong> para traduzir necessidades de negócio em estruturas de dados eficientes, rastreáveis e preparadas para escala.</p>
+                    <p>Minha trajetória é marcada por <strong>aprendizado rápido</strong> e <strong>adaptabilidade</strong>, o que me permitiu navegar ferramentas como Athena e AWS Glue em pouco tempo e aplicá-las em cenários reais com impacto direto em indicadores de qualidade.</p>
+                    <p>Aplico resiliência, troubleshooting e documentação clara para garantir a integridade do dado desde a ingestão em AWS Glue até a entrega final em dashboards no QuickSight.</p>
+                    <p><i>Evidências:</i> processos de ETL automatizados, datasets escaláveis e confiáveis, dashboards autogerenciáveis e uma atuação colaborativa que reduz a distância entre tecnologia, qualidade e negócio.</p>
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================
-             APPROACH SECTION
-             ============================================ -->
         <section id="approach">
             <div class="section-header">
                 <span class="section-number">03.</span>
@@ -1260,111 +115,253 @@
             </div>
 
             <p class="approach-intro">
-                Minha atuação é focada na viabilização de indicadores de Qualidade de Software. Trabalho na preparação,
-                exploração e visualização de dados, garantindo que as métricas reflitam com precisão o estado técnico
-                das aplicações.
+                Minha atuação percorre o processo de dados end-to-end: estruturação de bases sólidas e escaláveis,
+                exploração técnica, documentação clara e construção de visões que sustentam a observabilidade de
+                Qualidade e a melhoria contínua de processos.
             </p>
 
             <div class="approach-grid">
-                <div class="approach-card">
-                    <h3 class="approach-title">1. Estruturação de Datasets</h3>
-                    <p>Realizo a criação e organização das bases de dados necessárias para o monitoramento de qualidade.
-                        Utilizo SQL e Athena para estruturar tabelas que servem de fonte única de verdade para os
-                        indicadores.</p>
+                <article class="approach-card">
+                    <h3 class="approach-title">1. Estruturação de bases</h3>
+                    <p>Crio e organizo datasets com SQL e Athena para sustentar indicadores confiáveis, com foco em fonte única de verdade, consistência e escalabilidade.</p>
+                </article>
+
+                <article class="approach-card">
+                    <h3 class="approach-title">2. Exploração e validação</h3>
+                    <p>Investigo dados brutos para identificar padrões, falhas de preenchimento e anomalias antes que a informação avance para consumo analítico.</p>
+                </article>
+
+                <article class="approach-card">
+                    <h3 class="approach-title">3. Visualização orientada à decisão</h3>
+                    <p>Construo dashboards no QuickSight para transformar métricas técnicas em leitura objetiva para times de tecnologia e stakeholders de negócio.</p>
+                </article>
+
+                <article class="approach-card">
+                    <h3 class="approach-title">4. Documentação e melhoria contínua</h3>
+                    <p>Registro regras, estruturas e decisões técnicas para garantir continuidade, rastreabilidade e orientação dos times para melhoria contínua de processos.</p>
+                </article>
+
+                <article class="approach-card">
+                    <h3 class="approach-title">5. Evolução contínua</h3>
+                    <p>Aplicação de princípios de metodologia ágil e aprendizado contínuo.</p>
+                </article>
+            </div>
+
+            <div class="strategy-block">
+                <div class="strategy-copy-block">
+                    <p class="strategy-kicker">Competências Estratégicas</p>
+                    <p class="strategy-intro">Competências que conectam visão de negócio, clareza operacional e sustentação técnica no dia a dia da engenharia de dados.</p>
                 </div>
 
-                <div class="approach-card">
-                    <h3 class="approach-title">2. Exploração de Dados</h3>
-                    <p>Investigo os dados brutos para identificar padrões, inconsistências ou falhas de preenchimento. O
-                        foco é garantir a integridade da informação antes que ela chegue à camada de visualização.</p>
-                </div>
+                <div class="strategy-grid">
+                    <article class="strategy-card">
+                        <h3 class="strategy-title">Maturidade Profissional</h3>
+                        <ul class="strategy-list">
+                            <li>Decisões guiadas por evidências e contexto técnico.</li>
+                            <li>Autonomia para organizar entregas com foco em resolução.</li>
+                            <li>Adaptabilidade para navegar cenários novos com rapidez.</li>
+                            <li>Boa visão de processos para identificar gargalos e oportunidades.</li>
+                        </ul>
+                    </article>
 
-                <div class="approach-card">
-                    <h3 class="approach-title">3. Visualização de Métricas</h3>
-                    <p>Construo dashboards no QuickSight focados em indicadores técnicos de qualidade de software.
-                        Desenvolvo visões que facilitam o acompanhamento de métricas para os times de tecnologia.</p>
-                </div>
+                    <article class="strategy-card">
+                        <h3 class="strategy-title">Mentalidade Investigativa</h3>
+                        <ul class="strategy-list">
+                            <li>Troubleshooting com rigor analítico e senso crítico.</li>
+                            <li>Validação de métricas com atenção à integridade da fonte.</li>
+                            <li>Aprendizado ágil para ampliar repertório técnico continuamente.</li>
+                            <li>Visão analítica para transformar dados brutos em insights acionáveis.</li>
+                        </ul>
+                    </article>
 
-                <div class="approach-card">
-                    <h3 class="approach-title">4. Resolução de Problemas</h3>
-                    <p>Identifico e corrijo gargalos técnicos nos fluxos de dados atuais. Aplico lógica de programação e
-                        análise de sistemas para otimizar consultas e garantir a atualização correta dos painéis.</p>
+                    <article class="strategy-card">
+                        <h3 class="strategy-title">Comunicação Cross</h3>
+                        <ul class="strategy-list">
+                            <li>Interface clara entre tecnologia, qualidade e negócio.</li>
+                            <li>Documentação objetiva para reduzir ruído entre áreas.</li>
+                            <li>Facilitação de alinhamentos, mentorias e trocas técnicas.</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
-        <!-- ============================================
-             SKILLS EVOLUTION SECTION
-             ============================================ -->
-        <div class="evolution-container">
-            <p class="evolution-title">Evolução em Ferramentas Estratégicas</p>
-
-            <div class="evolution-grid">
-                <div>
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">SQL (Athena / Postgres)</span>
-                            <span class="skill-progress-value">75%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-75"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">Pandas & NumPy</span>
-                            <span class="skill-progress-value">70%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-70"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">Visualização (QuickSight)</span>
-                            <span class="skill-progress-value">80%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-80"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="evolution-column">
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">Python (Core / Jupyter)</span>
-                            <span class="skill-progress-value">60%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-60"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">AWS (Glue / S3 / Iceberg)</span>
-                            <span class="skill-progress-value">55%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-55"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-wrapper">
-                        <div class="skill-progress-head">
-                            <span class="skill-progress-label">PySpark</span>
-                            <span class="skill-progress-value">20%</span>
-                        </div>
-                        <div class="skill-progress-track">
-                            <div class="skill-progress-bar progress-20"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================
-             EXPERIENCE SECTION
-             ============================================ -->
-        <section id="experience">
+        <section id="ferramentas">
             <div class="section-header">
                 <span class="section-number">04.</span>
+                <h2 class="section-title">Ferramentas & Tecnologias</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <p class="tools-intro">Stack utilizada para estruturar dados, automatizar rotinas, sustentar observabilidade de qualidade e disponibilizar análises confiáveis para consumo interno.</p>
+
+            <div class="tools-grid">
+                <article class="tool-card" aria-label="SQL">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/sql.svg" alt="" class="tool-logo tool-logo--sql" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">SQL</span>
+                </article>
+
+                <article class="tool-card" aria-label="Athena">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/athena.svg" alt="" class="tool-logo tool-logo--aws-service tool-logo--athena" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Athena</span>
+                </article>
+
+                <article class="tool-card" aria-label="Python">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/python.svg" alt="" class="tool-logo tool-logo--python" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Python</span>
+                </article>
+
+                <article class="tool-card" aria-label="Pandas">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/pandas.svg" alt="" class="tool-logo tool-logo--pandas" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Pandas</span>
+                </article>
+
+                <article class="tool-card" aria-label="AWS Glue">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/glue.svg" alt="" class="tool-logo tool-logo--aws-service tool-logo--glue" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">AWS Glue</span>
+                </article>
+
+                <article class="tool-card" aria-label="QuickSight">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/quicksight.svg" alt="" class="tool-logo tool-logo--aws-service tool-logo--quicksight" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">QuickSight</span>
+                </article>
+
+                <article class="tool-card" aria-label="Apache Iceberg">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/iceberg.svg" alt="" class="tool-logo tool-logo--iceberg" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Iceberg</span>
+                </article>
+
+                <article class="tool-card" aria-label="AWS">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/aws.svg" alt="" class="tool-logo tool-logo--wide tool-logo--aws" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">AWS</span>
+                </article>
+
+                <article class="tool-card" aria-label="PySpark">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/pyspark.svg" alt="" class="tool-logo tool-logo--spark" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">PySpark</span>
+                </article>
+
+                <article class="tool-card" aria-label="Jupyter">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/jupyter.svg" alt="" class="tool-logo tool-logo--jupyter" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Jupyter</span>
+                </article>
+
+                <article class="tool-card" aria-label="AWS S3">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/s3.svg" alt="" class="tool-logo tool-logo--aws-service" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">AWS S3</span>
+                </article>
+
+                <article class="tool-card" aria-label="Google Colab">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/google-colab.svg" alt="" class="tool-logo tool-logo--colab" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Google Colab</span>
+                </article>
+
+                <article class="tool-card" aria-label="Numpy">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/numpy.svg" alt="" class="tool-logo tool-logo--numpy" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Numpy</span>
+                </article>
+
+                <article class="tool-card" aria-label="Plotly">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/plotly.svg" alt="" class="tool-logo tool-logo--plotly" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Plotly</span>
+                </article>
+
+                <article class="tool-card" aria-label="Matplotlib">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/matplotlib.svg" alt="" class="tool-logo tool-logo--matplotlib" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Matplotlib</span>
+                </article>
+
+                <article class="tool-card" aria-label="AWS Step Functions">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/step-functions.svg" alt="" class="tool-logo tool-logo--aws-service" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">Step Functions</span>
+                </article>
+
+                <article class="tool-card" aria-label="AWS EMR">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/emr.svg" alt="" class="tool-logo tool-logo--aws-service" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">AWS EMR</span>
+                </article>
+
+                <article class="tool-card" aria-label="SQLite">
+                    <span class="tool-orb" aria-hidden="true">
+                        <span class="tool-icon">
+                            <img src="assets/images/tools/sqlite.svg" alt="" class="tool-logo tool-logo--sqlite" loading="lazy" decoding="async">
+                        </span>
+                    </span>
+                    <span class="tool-name">SQLite</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <span class="section-number">05.</span>
                 <h2 class="section-title">Experiência Profissional</h2>
                 <div class="section-line"></div>
             </div>
@@ -1376,13 +373,28 @@
                 </div>
                 <p class="exp-role">Estagiária em Dados & Qualidade</p>
                 <ul class="exp-list">
-                    <li>Desenvolvimento de dashboards no AWS QuickSight para monitoramento de indicadores de Qualidade
-                        de Software.</li>
+                    <li>Desenvolvimento de dashboards no AWS QuickSight para monitoramento de indicadores de Qualidade de Software.</li>
                     <li>Estruturação e manipulação de grandes volumes de dados utilizando SQL e AWS Athena.</li>
-                    <li>Exploração e análise de dados técnicos para identificação de padrões e garantia de integridade
-                        nas métricas de Qualidade.</li>
-                    <li>Suporte técnico na manutenção de scripts e acompanhamento de metadados no ecossistema AWS (S3 e
-                        Glue).</li>
+                    <li>Exploração e análise de dados técnicos para identificação de padrões e garantia de integridade nas métricas de Qualidade.</li>
+                    <li>Suporte técnico na manutenção de scripts e acompanhamento de metadados no ecossistema AWS, com foco em S3 e Glue.</li>
+                    <li>Construção de bases especializadas para sustentar indicadores confiáveis de qualidade e observabilidade.</li>
+                    <li>Atuação com tabelas SOR (System of Record) e SOT (Source of Truth) para rastreabilidade e consistência dos dados.</li>
+                    <li>Trabalho dentro do contexto consumer no AWS Glue, construindo Jobs para ingestão e transformação de dados.</li>
+                    <li>Análise de métricas e indicadores de Qualidade da frente de atuação, orientando os times para melhoria contínua de processos.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <h3 class="exp-company">Liderança - Atuação Voluntária</h3>
+                    <span class="exp-date">Comunidade ProGirls</span>
+                </div>
+                <p class="exp-role">Vice-líder geral e liderança de frentes</p>
+                <ul class="exp-list">
+                    <li>Estruturação de regimentos internos para dar clareza de papéis, fluxo de trabalho e continuidade operacional à comunidade.</li>
+                    <li>Documentação de processos, combinados e materiais de apoio para padronizar a organização interna.</li>
+                    <li>Organização de iniciativas, frentes de trabalho e rotinas colaborativas com foco em execução sustentável.</li>
+                    <li>Atuação como porta-voz em eventos e mentorias de tecnologia, fortalecendo comunicação, representatividade e rede.</li>
                 </ul>
             </div>
 
@@ -1393,424 +405,251 @@
                 </div>
                 <p class="exp-role">Desenvolvimento de Hard Skills em Tecnologia</p>
                 <ul class="exp-list">
-                    <li>Aplicação de Estatística e Análise de Dados para extração de insights em bases brutas.</li>
-                    <li>Desenvolvimento de scripts em Python para automação de tarefas e tratamento de arquivos
-                        JSON/CSV.</li>
+                    <li>Aplicação de Estatística e análise de dados para extração de insights em bases brutas.</li>
+                    <li>Desenvolvimento de scripts em Python para automação de tarefas e tratamento de arquivos JSON e CSV.</li>
                     <li>Modelagem de bancos de dados relacionais e otimização de consultas complexas em SQL.</li>
-                    <li>Estudos em Back-end e Business Intelligence (BI) para compreensão do ciclo de vida completo do
-                        dado.</li>
-                    <li>Implementação de pipelines de dados utilizando AWS Glue para ingestão e transformação
-                        automatizada.</li>
+                    <li>Estudos em Back-end e Business Intelligence para compreensão do ciclo de vida completo do dado.</li>
+                    <li>Implementação de pipelines de dados utilizando AWS Glue para ingestão e transformação automatizada.</li>
                 </ul>
             </div>
-        </section>
-        <!-- ============================================
-             STUDY HOURS SECTION
-             ============================================ -->
-        <div class="study-hours-container">
-            <h3 class="study-hours-title">Dedicação e Estudos</h3>
 
-            <div class="study-hours-grid">
-                <div class="hour-card">
-                    <span class="hour-value">200h+</span>
-                    <span class="hour-label">SQL & Athena</span>
-                </div>
-                <div class="hour-card">
-                    <span class="hour-value">150h+</span>
-                    <span class="hour-label">Python & Glue</span>
-                </div>
-                <div class="hour-card">
-                    <span class="hour-value">240h+</span>
-                    <span class="hour-label">AWS Services</span>
+            <div class="study-hours-container">
+                <h3 class="study-hours-title">Dedicação e Estudos</h3>
+                <div class="study-hours-grid">
+                    <div class="hour-card">
+                        <span class="hour-value">400h+</span>
+                        <span class="hour-label">SQL & Athena</span>
+                    </div>
+                    <div class="hour-card">
+                        <span class="hour-value">300h+</span>
+                        <span class="hour-label">Python & Glue</span>
+                    </div>
+                    <div class="hour-card">
+                        <span class="hour-value">480h+</span>
+                        <span class="hour-label">AWS Services</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- ============================================
-             PROJECTS SECTION
-             ============================================ -->
+        </section>
         <section id="projects">
             <div class="section-header">
-                <span class="section-number">05.</span>
+                <span class="section-number">06.</span>
                 <h2 class="section-title">Projetos</h2>
                 <div class="section-line"></div>
             </div>
 
-            <!-- PROJECT 1 -->
-            <div class="project">
-                <div class="project-image">
-                    <div class="project-metric">Otimização e padronização da base de dados, aumento de confiabilidade e
-                        eficiência de análises</div>
-                </div>
-                <div class="evolution-column">
+            <article class="project">
+                <div class="project-content">
                     <div class="project-featured">Case em atuação</div>
-                    <h3 class="project-title">Governança e Self-Service de Indicadores de Qualidade</h3>
-                    <p class="project-description"><strong>Problema:</strong> Os dados de qualidade de software estavam
-                        dispersos e sem padronização, exigindo exploração manual recorrente e gerando baixa confiança
-                        nas métricas compartilhadas entre os times.<br>
-                        <strong>Decisão:</strong> Realizar a exploração via <strong>Jupyter Notebooks (AWS
-                            Glue)</strong> e Python para estruturar uma base técnica (spec) utilizando tabelas
-                        <strong>Apache Iceberg</strong> via Athena. O objetivo foi criar um dataset performático e
-                        governado para uso da comunidade de Dados.<br>
-                        <strong>Resultado:</strong> Implementação de uma fonte única de verdade que sustenta as
-                        visualizações no QuickSight, garantindo maior integridade e facilitando o acesso self-service
-                        aos indicadores de qualidade.<br>
-                        <strong>Sinal de sucesso:</strong> Disponibilização de datasets confiáveis para a comunidade
-                        interna e redução do tempo de resposta para visualização dos dados além de redução de custos e
-                        ganho de performance.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>AWS Glue</span>
-                        <span>Apache Iceberg</span>
-                        <span>SQL / Athena</span>
-                        <span>QuickSight</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Letycia-Locha" class="project-link" title="GitHub"
-                            aria-label="Abrir GitHub da Letycia">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/letycia-locha/" class="project-link" title="LinkedIn"
-                            aria-label="Abrir LinkedIn da Letycia">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                    <div class="project-main">
+                        <div class="project-header">
+                            <h3 class="project-title">Governança e Self-Service de Indicadores de Qualidade</h3>
+                            <p class="project-summary">Estruturação de uma base governada para transformar indicadores de qualidade em self-service confiável, com rastreabilidade desde a exploração até o consumo analítico.</p>
+                        </div>
 
-            <div class="project">
-                <div class="project-image">
-                    <div class="project-metric">Processamento distribuído com Spark</div>
-                </div>
-                <div class="evolution-column">
-                    <div class="project-featured">Study Project</div>
-                    <h3 class="project-title">Engenharia de Dados e Analytics: Fluxo de Fundos de Investimento (CVM)</h3>
-                    <p class="project-description"><strong>
-                        <strong>Problema:</strong> Os dados de informes diários de fundos de investimento da CVM eram disponibilizados em arquivos brutos (CSV/ZIP) de alto volume, com metadados faltantes (mais de 567 mil valores nulos em IDs de subclasse) e falta de padronização, dificultando análises de tendência de mercado em tempo hábil.<br>
-    
-                        <strong>Decisão:</strong> Implementar uma <strong>Arquitetura Medallion</strong> utilizando <strong>PySpark</strong> para processamento distribuído. Os dados foram estruturados em camadas (Bronze, Silver e Gold), utilizando o formato <strong>Apache Parquet com compressão Snappy</strong> para garantir alta performance de leitura e economia de armazenamento. O tratamento de dados garantiu a integridade de métricas financeiras sensíveis.<br>
-                        
-                        <strong>Resultado:</strong> Consolidação de uma "Fonte Única de Verdade" que permitiu identificar uma euforia no mercado em Janeiro de 2024, com captação líquida superior a <strong>R$ 109 bilhões</strong>. A estrutura suporta análises de Market Share, Volatilidade de Patrimônio e Ranking de Eficiência por classe de fundo.<br>
-                        
-                        <strong>Sinal de sucesso:</strong> Automação do pipeline de dados com governança (via GitHub Secrets), redução drástica do tempo de processamento comparado a métodos tradicionais e disponibilização de datasets governados para geração de dashboards analíticos.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>PySpark</span>
-                        <span>Apache Parquet</span>
-                        <span>Arquitetura Medallion</span>
-                        <span>Analytics / Plotly</span>
-                        <span>Git Flow</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Letycia-Locha/processamento_distribuido_spark" class="project-link" title="GitHub"
-                            aria-label="Abrir GitHub da Letycia">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/letycia-locha/" class="project-link" title="LinkedIn"
-                            aria-label="Abrir LinkedIn da Letycia">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                        <p class="project-highlight">Otimização e padronização da base de dados com aumento de confiabilidade, autonomia analítica e eficiência operacional.</p>
 
+                        <div class="project-story">
+                            <p class="project-point">
+                                <span class="project-point-label">Problema:</span>
+                                Dados de qualidade de software estavam dispersos, pouco padronizados e exigiam exploração manual frequente, o que reduzia a confiança nas métricas.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Decisão:</span>
+                                Explorar e estruturar os dados com <strong>Jupyter Notebooks (AWS Glue)</strong>, Python, <strong>Apache Iceberg</strong> e Athena para criar um dataset governado e performático.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Resultado:</span>
+                                Implementação de uma fonte única de verdade para sustentar visualizações no QuickSight com mais integridade e autonomia de consumo.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Sinal de sucesso:</span>
+                                Disponibilização de datasets confiáveis, menor tempo de resposta para visualização e ganhos de custo e performance.
+                            </p>
+                        </div>
+
+                        <div class="project-tech" aria-label="Tecnologias utilizadas neste projeto">
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/python.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">Python</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/glue.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">AWS Glue</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/iceberg.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">Apache Iceberg</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/athena.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">SQL / Athena</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/quicksight.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">QuickSight</span>
+                            </span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/Letycia-Locha" class="project-link" title="GitHub" aria-label="Abrir GitHub da Letycia" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/letycia-locha/" class="project-link" title="LinkedIn" aria-label="Abrir LinkedIn da Letycia" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-content">
+                    <div class="project-featured">Projeto autoral</div>
+                    <div class="project-main">
+                        <div class="project-header">
+                            <h3 class="project-title">Engenharia de Dados e Analytics: Fluxo de Fundos de Investimento (CVM)</h3>
+                            <p class="project-summary">Pipeline distribuído para transformar arquivos brutos da CVM em camadas analíticas prontas para leitura de tendências e monitoramento de mercado.</p>
+                        </div>
+
+                        <p class="project-highlight">Processamento distribuído com Spark, camadas Medallion e leitura analítica preparada para governança e monitoramento de mercado.</p>
+
+                        <div class="project-story">
+                            <p class="project-point">
+                                <span class="project-point-label">Problema:</span>
+                                Informes diários de fundos da CVM chegavam em alto volume, com metadados faltantes e baixa padronização, dificultando análises ágeis de tendência.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Decisão:</span>
+                                Implementar uma <strong>Arquitetura Medallion</strong> com <strong>PySpark</strong>, organizando o fluxo em Bronze, Silver e Gold com <strong>Apache Parquet</strong> e compressão Snappy.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Resultado:</span>
+                                Consolidação de uma fonte única de verdade que permitiu identificar uma euforia no mercado em janeiro de 2024, com captação líquida acima de <strong>R$ 109 bilhões</strong>.
+                            </p>
+                            <p class="project-point">
+                                <span class="project-point-label">Sinal de sucesso:</span>
+                                Pipeline automatizado, menor tempo de processamento e datasets prontos para dashboards analíticos com governança.
+                            </p>
+                        </div>
+
+                        <div class="project-tech" aria-label="Tecnologias utilizadas neste projeto">
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/python.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">Python</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon" aria-hidden="true">
+                                    <img src="assets/images/tools/pyspark.svg" alt="" loading="lazy" decoding="async">
+                                </span>
+                                <span class="project-tool-label">PySpark</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon project-tool-icon--text" aria-hidden="true">PQ</span>
+                                <span class="project-tool-label">Apache Parquet</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon project-tool-icon--text" aria-hidden="true">MD</span>
+                                <span class="project-tool-label">Arquitetura Medallion</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon project-tool-icon--text" aria-hidden="true">BI</span>
+                                <span class="project-tool-label">Analytics / Plotly</span>
+                            </span>
+                            <span class="project-tool">
+                                <span class="project-tool-icon project-tool-icon--text" aria-hidden="true">GF</span>
+                                <span class="project-tool-label">Git Flow</span>
+                            </span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/Letycia-Locha/processamento_distribuido_spark" class="project-link" title="GitHub" aria-label="Abrir projeto no GitHub" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/letycia-locha/" class="project-link" title="LinkedIn" aria-label="Abrir LinkedIn da Letycia" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
-        <!-- ============================================
-             ROADMAP SECTION
-             ============================================ -->
-        <section id="roadmap" class="container">
+
+        <section id="roadmap">
             <div class="section-header roadmap-header">
-                <span class="section-number">06.</span>
-                <h2 class="section-title">Projetos em andamento & Aprendizado Contínuo</h2>
-                <div class="roadmap-divider"></div>
+                <span class="section-number">07.</span>
+                <h2 class="section-title section-title--long">Projetos em Andamento & Aprendizado Contínuo</h2>
+                <div class="section-line"></div>
             </div>
 
             <div class="roadmap-grid">
-
-                <div class="roadmap-card">
+                <article class="roadmap-card">
                     <div class="roadmap-chip-wrap">
                         <span class="roadmap-chip">Q2 2026</span>
                     </div>
                     <h3 class="roadmap-card-title">Data Quality & Observabilidade</h3>
-                    <p class="roadmap-card-text">
-                        Implementação de frameworks de validação (<strong>Great Expectations</strong>) para garantir a
-                        integridade dos dados desde o S3 até o consumo final, reduzindo débitos técnicos.
-                    </p>
-                </div>
+                    <p class="roadmap-card-text">Implementação de frameworks de validação como <strong>Great Expectations</strong> para garantir integridade dos dados desde o S3 até o consumo final, reduzindo débitos técnicos.</p>
+                </article>
 
-                <div class="roadmap-card">
+                <article class="roadmap-card">
                     <div class="roadmap-chip-wrap">
-                        <span class="roadmap-chip">Continuous</span>
+                        <span class="roadmap-chip">Contínuo</span>
                     </div>
-                    <h3 class="roadmap-card-title">Estatística Aplicada a Negócios</h3>
-                    <p class="roadmap-card-text">
-                        Refinamento da visão analítica através do estudo de métodos estatísticos descritivos e
-                        inferenciais para elevar o nível das entregas de <strong>Business Intelligence</strong>.
-                    </p>
-                </div>
-
+                    <h3 class="roadmap-card-title">Orquestração de Pipelines de Dados</h3>
+                    <p class="roadmap-card-text">Automação e orquestração de workflows de dados com <strong>AWS Step Functions</strong> e <strong>Airflow</strong>, implementando monitoramento, retry e escalabilidade em pipelines de ingestão e transformação.</p>
+                </article>
             </div>
         </section>
 
-        <!-- ============================================
-             SKILLS SECTION
-             ============================================ -->
-        <section id="skills">
-            <div class="section-header">
-                <span class="section-number">07.</span>
-                <h2 class="section-title">Competências Estratégicas</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="skills-section">
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Engenharia de Analytics</h4>
-                    <div class="skill-item">Estruturação de bases (SQL / Athena)</div>
-                    <div class="skill-item">Modelagem em Apache Iceberg</div>
-                    <div class="skill-item">Exploração de dados via Notebooks</div>
-                    <div class="skill-item">Visualização de indicadores (QuickSight)</div>
-                </div>
-
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Qualidade de Dados</h4>
-                    <div class="skill-item">Garantia da integridade da fonte</div>
-                    <div class="skill-item">Governança técnica e padronização</div>
-                    <div class="skill-item">Identificação de anomalias em datasets</div>
-                    <div class="skill-item">Criação de bases spec para comunidades</div>
-                </div>
-
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Mentalidade Investigativa</h4>
-                    <div class="skill-item">Troubleshooting e diagnóstico de falhas</div>
-                    <div class="skill-item">Rigor analítico na validação de métricas</div>
-                    <div class="skill-item">Aprendizado ágil de novas tecnologias</div>
-                    <div class="skill-item">Resiliência em cenários de alta complexidade</div>
-                </div>
-
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Maturidade Profissional</h4>
-                    <div class="skill-item">Comunicação Cross: Interface clara entre áreas</div>
-                    <div class="skill-item">Adaptabilidade: Transição de carreira eficiente</div>
-                    <div class="skill-item">Visão Analítica: Decisões baseadas em evidências</div>
-                    <div class="skill-item">Autonomia: Execução com foco em resolução</div>
-                </div>
-
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Liderança & Comunidade</h4>
-                    <div class="skill-item">ProGirls: Atuação como vice lider geral e lider de frentes</div>
-                    <div class="skill-item">Porta-voz: Atuação em palestras e eventos tech</div>
-                    <div class="skill-item">Iniciativa: Criação de fluxos e organização interna</div>
-                    <div class="skill-item">Mentoria: Compartilhamento de conhecimento e rede</div>
-                </div>
-
-                <div class="skills-pillar">
-                    <h4 class="pillar-title">Comprometimento Técnico</h4>
-                    <div class="skill-item">Estudo Contínuo: Foco em tendências de Engenharia de Dados & Analytics</div>
-                    <div class="skill-item">Persistência: Superação de desafios técnicos complexos</div>
-                    <div class="skill-item">Capricho: Atenção aos detalhes e documentação</div>
-                    <div class="skill-item">Foco em Entrega: Compromisso com a qualidade final</div>
-                </div>
-            </div>
-        </section>
-        <!-- ============================================
-             CONTACT SECTION
-             ============================================ -->
         <section id="contact">
             <div class="contact-content">
-                <div class="contact-number">08. Contato</div>
-                <h2 class="contact-title">Vamos Conversar?</h2>
-                <p class="contact-text">Atualmente atuo como estagiária em Dados e Qualidade no Itaú, focada na
-                    estruturação de bases e visualização de indicadores de qualidade. Estou aberta a conexões e trocas
-                    sobre tecnologia e dados.</p>
+                <div class="section-header">
+                    <span class="section-number">08.</span>
+                    <h2 class="section-title">Contato</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="contact-lead">Vamos conversar?</p>
+                <p class="contact-text">Atualmente atuo como estagiária em Dados e Qualidade no Itaú, focada na construção de bases especializadas, observabilidade de qualidade e visualização de indicadores. Estou aberta a conexões e trocas sobre tecnologia e dados.</p>
 
                 <div class="contact-links">
-                    <a href="mailto:letyciatech@gmail.com" class="contact-link">
-                        <span class="contact-link-label">📧 E-mail</span>
+                    <a href="mailto:letyciatech@gmail.com" class="contact-link contact-link--primary">
+                        <span class="contact-link-label"><i class="fa-regular fa-envelope" aria-hidden="true"></i> E-mail</span>
                         <span class="contact-link-value">letyciatech@gmail.com</span>
+                        <span class="contact-link-meta">Canal principal para conversas profissionais e oportunidades.</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/letycia-locha/" target="_blank" rel="noopener noreferrer"
-                        class="contact-link">
-                        <span class="contact-link-label">🔗 LinkedIn</span>
-                        <span class="contact-link-value">Letycia Andrade Locha</span>
+                </div>
+
+                <div class="contact-social-icons">
+                    <a href="https://www.linkedin.com/in/letycia-locha/" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/Letycia-Locha" target="_blank" rel="noopener noreferrer"
-                        class="contact-link">
-                        <span class="contact-link-label">🐙 GitHub</span>
-                        <span class="contact-link-value">Letycia-Locha</span>
+                    <a href="https://github.com/Letycia-Locha" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="https://www.instagram.com/pythonicah/" target="_blank" rel="noopener noreferrer"
-                        class="contact-link">
-                        <span class="contact-link-label">📸 Instagram</span>
-                        <span class="contact-link-value">@pythonicah</span>
+                    <a href="https://www.instagram.com/pythonicah/" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
     <footer>
         <p>Desenvolvido por Letycia Locha © 2026 | Todos os direitos reservados</p>
-    </footer> <!-- ============================================
-         SCRIPTS
-         ============================================ -->
-    <script>
-        // Smooth scroll for in-page anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-    <script>
-        (function () {
-            function track(eventName, params) {
-                if (typeof gtag === 'function') {
-                    gtag('event', eventName, params);
-                }
-            }
+    </footer>
 
-            let heroViewed = false;
-            let projectsViewed = false;
-
-            document.addEventListener('DOMContentLoaded', function () {
-                if (!heroViewed) {
-                    heroViewed = true;
-                    track('hero_view', {
-                        funnel_step: 1,
-                        page: window.location.pathname
-                    });
-                }
-            });
-
-            const heroCta = document.querySelector('#inicio .primary-btn');
-            if (heroCta) {
-                heroCta.addEventListener('click', function () {
-                    track('hero_cta_click', {
-                        section: 'hero',
-                        label: heroCta.innerText.trim()
-                    });
-                });
-            }
-
-            const projectsSection = document.getElementById('projects');
-            function fireProjectsView() {
-                if (projectsViewed) return;
-                projectsViewed = true;
-                track('projects_view', {
-                    funnel_step: 2,
-                    page: window.location.pathname,
-                    section_id: 'projects'
-                });
-            }
-
-            if (projectsSection && 'IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                            fireProjectsView();
-                            observer.disconnect();
-                        }
-                    });
-                }, { threshold: 0.35 });
-                observer.observe(projectsSection);
-            } else if (projectsSection) {
-                window.addEventListener('scroll', function onScroll() {
-                    const doc = document.documentElement;
-                    const scrollTop = doc.scrollTop;
-                    if (scrollTop >= projectsSection.offsetTop) {
-                        fireProjectsView();
-                        window.removeEventListener('scroll', onScroll);
-                    }
-                }, { passive: true });
-            }
-
-            const projectCards = document.querySelectorAll('#projects .project');
-            projectCards.forEach(function (card) {
-                card.addEventListener('click', function () {
-                    const title = card.querySelector('.project-title');
-                    track('project_card_click', {
-                        funnel_step: 3,
-                        page: window.location.pathname,
-                        project_name: title ? title.innerText.trim() : '',
-                        section_id: 'projects'
-                    });
-                });
-            });
-
-            const portfolioLinks = document.querySelectorAll('a[href^="http"]');
-            portfolioLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    let section = 'header';
-                    if (link.closest('footer')) {
-                        section = 'footer';
-                    } else if (link.closest('.project')) {
-                        section = 'featured';
-                    } else {
-                        const sectionEl = link.closest('section');
-                        if (sectionEl && sectionEl.id) {
-                            section = sectionEl.id;
-                        }
-                    }
-                    track('portfolio_link_click', {
-                        section: section
-                    });
-                });
-            });
-        })();
-    </script>
-    <script>
-        (function () {
-            const thresholds = [25, 50, 75, 100];
-            const fired = new Set();
-            let ticking = false;
-
-            function getScrollPercent() {
-                const doc = document.documentElement;
-                const scrollTop = doc.scrollTop;
-                const scrollHeight = doc.scrollHeight;
-                const clientHeight = doc.clientHeight;
-                const maxScroll = scrollHeight - clientHeight;
-                if (maxScroll <= 0) return 100;
-                return (scrollTop / maxScroll) * 100;
-            }
-
-            function onScroll() {
-                if (ticking) return;
-                ticking = true;
-                window.requestAnimationFrame(function () {
-                    const percent = getScrollPercent();
-                    thresholds.forEach(function (threshold) {
-                        if (percent >= threshold && !fired.has(threshold)) {
-                            fired.add(threshold);
-                            if (typeof gtag === 'function') {
-                                gtag('event', 'scroll_' + threshold, {
-                                    percent: threshold,
-                                    page: window.location.pathname
-                                });
-                            }
-                        }
-                    });
-                    ticking = false;
-                });
-            }
-
-            window.addEventListener('scroll', onScroll, { passive: true });
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
