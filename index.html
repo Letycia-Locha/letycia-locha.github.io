@@ -9,6 +9,14 @@
     })(window,document,'script','dataLayer','GTM-PGP6KMC5');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            if (stored === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Letycia Locha | Analista de Engenharia de Dados Jr no Itaú Unibanco. Portfólio com projetos de Data Engineering, Analytics e AWS.">
     <meta name="theme-color" content="#1b1938">
@@ -45,10 +53,17 @@
                 <img src="assets/images/letycialocha/avatar-logo.jpg" alt="Letycia Locha" class="logo-mark">
             </a>
 
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-                <span class="nav-toggle-label">Menu</span>
-                <span class="nav-toggle-icon" aria-hidden="true"></span>
-            </button>
+            <div class="navbar-actions">
+                <button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+                    <i class="fa-solid fa-moon theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true"></i>
+                </button>
+
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="nav-toggle-label">Menu</span>
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
 
         <nav id="primary-nav" class="nav-panel" aria-label="Navegação principal">
@@ -792,8 +807,7 @@
             <a href="https://github.com/Letycia-Locha" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.instagram.com/pythonicah/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <p>Desenvolvido por Letycia Locha © 2026 | Todos os direitos reservados</p>
-        <p class="footer-credit">Design &amp; desenvolvimento: <a href="https://fhsan.com.br" target="_blank" rel="noopener noreferrer">Fábio San</a></p>
+        <p>Desenvolvido por <a href="https://fhsan.com.br" target="_blank" rel="noopener noreferrer">Fábio San</a> © 2026 | Todos os direitos reservados</p>
     </footer>
 
     <script src="script.js"></script>

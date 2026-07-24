@@ -118,6 +118,7 @@
 
     --accent-neon: var(--primary);
     --accent-hover: var(--primary-deep);
+    --accent-stat: var(--primary);
     --accent-bg-soft: rgba(27, 25, 56, 0.06);
     --accent-bg-strong: rgba(27, 25, 56, 0.1);
 
@@ -183,6 +184,7 @@ footer {
 
     --accent-neon: var(--surface-violet-soft);
     --accent-hover: var(--surface-violet-soft);
+    --accent-stat: var(--surface-violet-soft);
     --accent-bg-soft: rgba(255, 255, 255, 0.08);
     --accent-bg-strong: rgba(255, 255, 255, 0.14);
 
@@ -313,6 +315,13 @@ button:focus-visible {
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
     flex-shrink: 0;
 }
 
@@ -1195,7 +1204,7 @@ section > * {
     line-height: 1.1;
     font-weight: var(--weight-heavy);
     letter-spacing: -0.05em;
-    color: var(--primary);
+    color: var(--accent-stat);
 }
 
 .hour-label {
@@ -1651,15 +1660,16 @@ footer p {
     opacity: 0.7;
 }
 
-.footer-credit a {
+footer p a {
     color: inherit;
     text-decoration: underline;
     text-underline-offset: 0.15em;
     transition: color 180ms ease;
 }
 
-.footer-credit a:hover {
+footer p a:hover {
     color: var(--accent-hover);
+    opacity: 1;
 }
 
 #contact {
@@ -2341,7 +2351,7 @@ footer p {
     line-height: 1.1;
     font-weight: var(--weight-heavy);
     letter-spacing: -0.03em;
-    color: var(--primary);
+    color: var(--accent-stat);
 }
 
 .about-stat-label {
@@ -2534,4 +2544,106 @@ footer {
         opacity: 1;
         transform: none;
     }
+}
+
+/* ==========================================================================
+   DARK THEME
+   Toggled via [data-theme="dark"] on <html> (see theme-toggle in script.js).
+   Reuses the same on-dark token recipe already applied inside
+   #navbar/#inicio/#contact/footer and extends it to the whole page, so the
+   light-canvas body sections adopt the same dark-indigo canvas the hero
+   already uses. Only the light-default foundation tokens are overridden
+   here — every semantic token derived from them (surface-panel, border-*,
+   text-white, etc.) cascades automatically.
+   ========================================================================== */
+[data-theme="dark"] {
+    --canvas: var(--primary-deep);
+    --canvas-soft: var(--primary);
+    --ink: var(--on-primary);
+    --ink-mute: var(--on-dark-mute);
+    --ink-faint: var(--on-dark-faint);
+    --hairline: var(--hairline-dark);
+
+    --accent-neon: var(--surface-violet-soft);
+    --accent-hover: var(--surface-violet-soft);
+    --accent-stat: var(--surface-violet-soft);
+    --accent-bg-soft: rgba(255, 255, 255, 0.08);
+    --accent-bg-strong: rgba(255, 255, 255, 0.14);
+
+    --accent-veil-06: rgba(255, 255, 255, 0.06);
+    --accent-veil-12: rgba(255, 255, 255, 0.12);
+    --accent-veil-14: rgba(255, 255, 255, 0.14);
+    --accent-veil-24: rgba(255, 255, 255, 0.24);
+
+    --surface-panel-strong: rgba(255, 255, 255, 0.12);
+
+    /* Elevation on a dark canvas reads as a lighter edge, not a black shadow. */
+    --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Solid-indigo fills invert to the on-dark pill treatment: once the body
+   canvas itself goes dark indigo, indigo-on-indigo has no contrast left. */
+[data-theme="dark"] .cert-pill--pro {
+    background: var(--surface-violet-soft);
+    color: var(--primary);
+    border-color: var(--surface-violet-soft);
+}
+
+/* Tool icons are silhouetted dark for the light-canvas cards; on a dark
+   canvas the chip they sit on is dark too, so the silhouette flips back
+   to light — mirrors the original dark-theme icon treatment. */
+[data-theme="dark"] .tool-logo,
+[data-theme="dark"] .project-tool-icon img {
+    filter: brightness(0) invert(1);
+}
+
+/* Certification artwork is third-party and may carry an opaque background;
+   give it a light plate so it never floats as a stray white box. */
+[data-theme="dark"] .cert-badge-wrapper {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: var(--radius-lg);
+}
+
+/* Reinforce the indigo -> teal seam: on a light canvas the jump to the teal
+   band already reads as a strong break; on a dark canvas both are close in
+   value, so a thin seam keeps that closing moment legible. */
+[data-theme="dark"] #contact {
+    border-top: 1px solid var(--surface-teal-mid);
+}
+
+/* ==========================================================================
+   THEME TOGGLE
+   ========================================================================== */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-faint);
+    background: transparent;
+    color: var(--text-light-slate);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-hover);
+    border-color: var(--accent-neon);
+}
+
+.theme-toggle-icon--sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle-icon--moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle-icon--sun {
+    display: inline;
 }

@@ -1,3 +1,33 @@
+// ==========================================================================
+// THEME TOGGLE (claro / escuro)
+// ==========================================================================
+const themeToggle = document.querySelector(".theme-toggle");
+const THEME_STORAGE_KEY = "theme";
+
+const applyTheme = (theme) => {
+  if (theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+  }
+};
+
+if (themeToggle) {
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  applyTheme(storedTheme === "dark" ? "dark" : "light");
+
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const nextTheme = isDark ? "light" : "dark";
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  });
+}
+
 const navbar = document.getElementById("navbar");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = Array.from(document.querySelectorAll(".nav-link"));

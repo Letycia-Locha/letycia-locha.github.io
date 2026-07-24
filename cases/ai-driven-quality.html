@@ -9,6 +9,14 @@
     })(window,document,'script','dataLayer','GTM-PGP6KMC5');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            if (stored === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case - AI-Driven Quality | Letycia Locha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,6 +134,11 @@
             <a class="logo-badge" href="../" aria-label="Voltar ao início">
                 <img src="../assets/images/letycialocha/logo-l-monogram.svg" alt="Monograma L de Letycia Locha" class="logo-mark">
             </a>
+
+            <button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+                <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">&#9789;</span>
+                <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">&#9728;</span>
+            </button>
         </div>
     </header>
 
@@ -262,8 +275,9 @@
     </main>
 
     <footer class="case-footer">
-        <p>Desenvolvido por Letycia Locha © 2026 | Todos os direitos reservados</p>
-        <p class="footer-credit">Design &amp; desenvolvimento: <a href="https://fhsan.com.br" target="_blank" rel="noopener noreferrer">Fábio San</a></p>
+        <p>Desenvolvido por <a href="https://fhsan.com.br" target="_blank" rel="noopener noreferrer">Fábio San</a> © 2026 | Todos os direitos reservados</p>
     </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>
