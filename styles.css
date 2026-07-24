@@ -519,7 +519,7 @@ section > * {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-section);
+    margin-bottom: var(--spacing-md);
     text-align: center;
 }
 
@@ -629,6 +629,14 @@ section > * {
 
 .bio {
     max-width: 42rem;
+}
+
+.approach-intro,
+.tools-intro {
+    max-width: 48rem;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
 }
 
 .cta-container {
@@ -861,10 +869,9 @@ section > * {
 }
 
 .about-text {
-    max-width: var(--measure-copy);
-}
-
-.about-text {
+    max-width: 48rem;
+    margin-inline: auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
@@ -918,8 +925,11 @@ section > * {
 .strategy-copy-block {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    max-width: var(--measure-copy);
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-xs);
+    max-width: 48rem;
+    margin-inline: auto;
 }
 
 .strategy-grid {
@@ -927,8 +937,21 @@ section > * {
 }
 
 .approach-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
     background: var(--canvas);
     border: 1px solid var(--hairline);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--surface-violet-soft);
 }
 
 .strategy-card {
@@ -1243,21 +1266,21 @@ section > * {
 }
 
 .project-title {
-    max-width: 36rem;
+    max-width: 100%;
     font-size: var(--type-project-title);
     line-height: 1.12;
     letter-spacing: -0.03em;
 }
 
 .project-summary {
-    max-width: var(--measure-copy);
+    max-width: 100%;
     font-size: var(--type-body);
     line-height: 1.7;
     color: var(--text-light-slate);
 }
 
 .project-highlight {
-    max-width: var(--measure-copy);
+    max-width: 100%;
     padding: var(--spacing-md);
     border-left: 3px solid var(--accent-neon);
     border-radius: var(--radius-lg);
@@ -1270,8 +1293,9 @@ section > * {
 .project-story {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--spacing-sm);
-    max-width: 44rem;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 100%;
 }
 
 .project-point {
@@ -1406,9 +1430,14 @@ section > * {
 }
 
 .contact-content {
-    display: grid;
-    gap: var(--spacing-md);
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    max-width: 54rem;
+    margin-inline: auto;
+    width: 100%;
 }
 
 #contact .section-header {
@@ -1416,7 +1445,9 @@ section > * {
 }
 
 .contact-text {
-    max-width: var(--measure-copy);
+    max-width: 44rem;
+    margin-inline: auto;
+    text-align: center;
 }
 
 .contact-lead {
@@ -1424,10 +1455,13 @@ section > * {
     line-height: var(--line-medium);
     font-weight: var(--weight-semibold);
     color: var(--text-white);
+    text-align: center;
 }
 
 .contact-links {
+    width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-md);
     align-items: stretch;
 }
 
@@ -1894,7 +1928,9 @@ footer p {
 .cert-intro {
     color: var(--text-slate);
     font-size: var(--type-body);
-    max-width: 46rem;
+    max-width: 48rem;
+    margin-inline: auto;
+    text-align: center;
     margin-bottom: var(--spacing-xl);
     line-height: 1.6;
 }
@@ -2152,11 +2188,12 @@ footer p {
 .role-header::before {
     content: "";
     position: absolute;
-    left: calc(-1.5rem - 7px);
+    left: calc(-1.5rem - 1px);
     top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
     border-radius: 50%;
     background: var(--bg-navy);
     border: 2px solid var(--border-strong);

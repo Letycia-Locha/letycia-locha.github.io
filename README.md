@@ -1,4 +1,4 @@
-# Portfólio — Letycia Andrade Locha
+# Portfólio: Letycia Andrade Locha
 
 Este repositório contém o código-fonte do meu portfólio profissional, focado na transição de carreira da Medicina Veterinária para a **Tecnologia (Engenharia de Dados & Analytics)**.
 
