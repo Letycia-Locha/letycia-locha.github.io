@@ -2,7 +2,7 @@
 
 Este repositório contém o código-fonte do meu portfólio profissional, focado na transição de carreira da Medicina Veterinária para a **Tecnologia (Engenharia de Dados & Analytics)**.
 
-Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco** (Squad de Modernização de Engenharia de Dados e Analytics), atuando diretamente no *run*: sustentação de rotinas, modernização de fluxos e pipelines de dados, e resolução de problemas técnicos focados em Engenharia de Dados.
+Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco** (Squad de Modernização de Engenharia de Dados e Analytics), atuando no *run*: sustentação de rotinas, modernização de fluxos e pipelines de dados em arquiteturas **Data Mesh** e habilitação de decisões **Data-Driven**.
 
 👉 Portfólio online: https://letycia-locha.github.io/
 
@@ -10,11 +10,12 @@ Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco
 
 ## 🧠 Contexto e Atuação
 
-Minha trajetória é movida pela capacidade de aprendizado ágil, resolução de problemas e resiliência. No ecossistema de dados, minha atuação é fortemente focada em **Engenharia de Dados no *run***:
+Minha trajetória é movida pela capacidade de aprendizado ágil, resolução de problemas e resiliência. No ecossistema de dados, minha atuação é fortemente focada em **Engenharia de Dados no *run*** com orientação a **Data Mesh** e decisão **Data-Driven**:
 
-- 🔄 **Sustentação de Rotinas:** Acompanhamento operacional diário, garantindo alta disponibilidade, estabilidade e monitoramento em ambiente produtivo.
-- ⚡ **Fluxos e Pipelines Modernizados:** Evolução e modernização de arquiteturas de dados, refatorando processos para pipelines automatizados e eficientes.
+- 🔄 **Sustentação de Rotinas:** Acompanhamento operacional diário, garantindo alta disponibilidade, estabilidade e monitoramento de produtos de dados em produção.
+- ⚡ **Fluxos e Pipelines Modernizados:** Evolução e modernização de arquiteturas de dados em domínios descentralizados (**Data Mesh**), refatorando processos para pipelines automatizados e eficientes.
 - 🛠️ **Resolução de Problemas:** Troubleshooting técnico focado no diagnóstico de causas raízes de falhas de dados e execuções.
+- 🎯 **Cultura Data-Driven:** Estruturação de dados confiáveis e governados para viabilizar análises e decisões orientadas a evidências pelo negócio.
 
 ---
 
