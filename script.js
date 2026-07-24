@@ -100,3 +100,36 @@ if ("IntersectionObserver" in window && sections.length > 0) {
 } else if (sections[0]) {
   setActiveLink(sections[0].id);
 }
+
+// ==========================================================================
+// SCROLL-REVEAL ANIMATIONS
+// ==========================================================================
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window && revealElements.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal--visible");
+          // Opcional: descomente a linha abaixo se quiser que a animação ocorra apenas 1 vez
+          // observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.1,
+    }
+  );
+
+  revealElements.forEach((el) => {
+    revealObserver.observe(el);
+  });
+} else {
+  // Fallback se IntersectionObserver não for suportado
+  revealElements.forEach((el) => {
+    el.classList.add("reveal--visible");
+  });
+}

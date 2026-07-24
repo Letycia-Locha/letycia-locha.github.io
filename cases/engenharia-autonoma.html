@@ -4,105 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case - Engenharia Autonoma | Letycia Locha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :root {
-            --bg-navy: #0a192f;
-            --bg-light-navy: #112240;
-            --text-slate: #8892b0;
-            --text-light-slate: #a8b2d1;
-            --text-white: #e6f1ff;
-            --accent-neon: #FF5F1F;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-navy);
-            color: var(--text-slate);
-            line-height: 1.7;
-        }
-
-        header {
-            padding: 24px 40px;
-            border-bottom: 1px solid rgba(255, 95, 31, 0.2);
-            background: rgba(10, 25, 47, 0.9);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo-badge {
-            font-family: "Fira Code", "Courier New", monospace;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--accent-neon);
-        }
-
-        main {
-            max-width: 900px;
+        main.case-main {
+            max-width: 52rem;
             margin: 0 auto;
-            padding: 40px 20px 80px;
+            padding: 8rem 1.5rem 5rem;
         }
 
-        a {
-            color: var(--accent-neon);
-            text-decoration: none;
+        .case-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent-hover);
+            font-weight: var(--weight-medium);
+            transition: color 180ms ease;
         }
 
-        h1, h2 {
+        .case-back:hover {
             color: var(--text-white);
         }
 
-        h1 {
-            font-size: 2.4rem;
-            margin: 16px 0 8px;
+        main.case-main h1 {
+            font-family: var(--font-sans);
+            color: var(--text-white);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
         }
 
-        h2 {
-            font-size: 1.3rem;
-            margin: 32px 0 8px;
+        main.case-main > section:first-of-type p {
+            color: var(--text-light-slate);
+            font-size: var(--type-body);
+            max-width: 40rem;
         }
 
-        ul {
-            padding-left: 20px;
+        main.case-main section {
+            margin-top: var(--spacing-lg);
         }
 
-        .card {
-            background: rgba(17, 34, 64, 0.4);
-            border: 1px solid rgba(255, 95, 31, 0.2);
-            border-radius: 10px;
-            padding: 18px 20px;
+        main.case-main h2 {
+            font-family: var(--font-sans);
+            color: var(--accent-hover);
+            font-size: var(--type-card-title);
+            margin-bottom: var(--spacing-sm);
         }
 
-        footer {
-            padding: 24px 20px 40px;
-            text-align: center;
+        main.case-main p,
+        main.case-main li {
+            font-size: var(--type-body);
+            line-height: 1.75;
             color: var(--text-slate);
-            border-top: 1px solid rgba(255, 95, 31, 0.2);
         }
 
-        @media (max-width: 640px) {
-            header {
-                padding: 20px;
-            }
+        main.case-main ul,
+        main.case-main ol {
+            padding-left: 1.25rem;
+        }
 
-            h1 {
-                font-size: 2rem;
+        main.case-main .card {
+            background: var(--surface-panel-muted);
+            border: 1px solid var(--border-subtle);
+            border-left: 3px solid var(--accent-neon);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+        }
+
+        .case-footer {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+            text-align: center;
+            color: var(--text-light-slate);
+            font-size: var(--font-14);
+            border-top: 1px solid var(--border-divider);
+        }
+
+        @media (max-width: 40rem) {
+            main.case-main {
+                padding-top: 6.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-badge">SMK</div>
+    <header id="navbar">
+        <div class="navbar-bar">
+            <a class="logo-badge" href="../" aria-label="Voltar ao início">
+                <img src="../assets/images/letycialocha/logo-l-monogram.svg" alt="Monograma L de Letycia Locha" class="logo-mark">
+            </a>
+        </div>
     </header>
 
-    <main>
-        <p><a href="../#projects">← Voltar para Projetos</a></p>
+    <main class="case-main">
+        <p><a class="case-back" href="../#projects">← Voltar para Projetos</a></p>
 
         <section>
             <h1>Case: Engenharia Autonoma</h1>
@@ -155,8 +154,9 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="case-footer">
         <p>Desenvolvido por Letycia Locha © 2026 | Todos os direitos reservados</p>
+        <p class="footer-credit">Design &amp; desenvolvimento: <a href="https://fhsan.com.br" target="_blank" rel="noopener noreferrer">Fábio San</a></p>
     </footer>
 </body>
 </html>

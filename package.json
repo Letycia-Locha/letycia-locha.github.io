@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "http-server -c-1",
     "screenshot": "node scripts/screenshot.js"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
     "playwright": "^1.36.0"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
   }
 }
