@@ -2,7 +2,7 @@
 
 Este repositório contém o código-fonte do meu portfólio profissional, focado na transição de carreira da Medicina Veterinária para a **Tecnologia (Engenharia de Dados & Analytics)**.
 
-Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco** (Squad de Modernização de Engenharia de Dados e Analytics), onde atuo na construção, evolução e sustentação de pipelines de dados, modelagem, otimização de performance e governança.
+Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco** (Squad de Modernização de Engenharia de Dados e Analytics), atuando diretamente no *run*: sustentação de rotinas, modernização de fluxos e pipelines de dados, e resolução de problemas técnicos focados em Engenharia de Dados.
 
 👉 Portfólio online: https://letycia-locha.github.io/
 
@@ -10,9 +10,11 @@ Atualmente, atuo como **Analista de Engenharia de Dados Jr** no **Itaú Unibanco
 
 ## 🧠 Contexto e Atuação
 
-Minha trajetória é movida pela capacidade de aprendizado ágil e resiliência. No ecossistema de dados, meu foco não é apenas a ferramenta, mas a **integridade da informação**, a performance e o valor que ela entrega ao negócio.
+Minha trajetória é movida pela capacidade de aprendizado ágil, resolução de problemas e resiliência. No ecossistema de dados, minha atuação é fortemente focada em **Engenharia de Dados no *run***:
 
-Atuo em um papel *Cross*, traduzindo necessidades técnicas e de negócio em estruturas de dados eficientes (SQL/Athena), pipelines automatizados (Python/AWS Glue) e visualizações acionáveis (QuickSight), sempre com um olhar voltado para a **Qualidade e Governança**.
+- 🔄 **Sustentação de Rotinas:** Acompanhamento operacional diário, garantindo alta disponibilidade, estabilidade e monitoramento em ambiente produtivo.
+- ⚡ **Fluxos e Pipelines Modernizados:** Evolução e modernização de arquiteturas de dados, refatorando processos para pipelines automatizados e eficientes.
+- 🛠️ **Resolução de Problemas:** Troubleshooting técnico focado no diagnóstico de causas raízes de falhas de dados e execuções.
 
 ---
 
